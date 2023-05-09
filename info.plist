@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>3EE8C2D6-858C-4F99-897F-DAE037BDE1B3</string>
+				<string>F596D83C-3346-449D-9BCA-3191EE4113AA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -73,19 +73,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>3EE8C2D6-858C-4F99-897F-DAE037BDE1B3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>61512DD4-5CEC-4A23-9DB6-13836C4D46D3</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
 		<array>
 			<dict>
@@ -112,19 +99,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>49576F9E-2FA6-474D-9575-35693C5A1533</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>EE2184C0-8A5A-48F0-9116-0F8E81F1C3DC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<true/>
-			</dict>
-		</array>
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<array>
 			<dict>
@@ -143,32 +117,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>61512DD4-5CEC-4A23-9DB6-13836C4D46D3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F596D83C-3346-449D-9BCA-3191EE4113AA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>6EAEA393-462C-4621-950B-4C57BAB46B23</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>61512DD4-5CEC-4A23-9DB6-13836C4D46D3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -228,19 +176,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>CE4941AE-EF58-4C47-9034-35921DDADF94</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6EAEA393-462C-4621-950B-4C57BAB46B23</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<true/>
-			</dict>
-		</array>
 		<key>D4E7636D-BD88-4389-B968-F1B9A60D8977</key>
 		<array>
 			<dict>
@@ -256,19 +191,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0716703E-7BD0-4B4B-BE1B-0868313308E8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>EE2184C0-8A5A-48F0-9116-0F8E81F1C3DC</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>61512DD4-5CEC-4A23-9DB6-13836C4D46D3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -301,53 +223,6 @@
 	<string>Timer</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<true/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>function run(argv) {
-  ObjC.import('stdlib');
-  const time = $.getenv('timer_time');
-
-  let seconds = 60;
-
-  const match = time.match(/(\d*\.?\d+)([a-zA-Z]*)/i);
-
-  if (match) {
-    const digits = Number(match[1]);
-    const units = match[2];
-
-    if (['', 's', 'sec', 'secs', 'second', 'seconds'].includes(units)) {
-      seconds = digits;
-    }
-    if (['m', 'min', 'mins', 'minute', 'minutes'].includes(units)) {
-      seconds = digits * 60;
-    }
-    if (['h', 'hr', 'hrs', 'hour', 'hours'].includes(units)) {
-      seconds = digits * 60 * 60;
-    }
-  }
-
-  return seconds;
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>parse_time.js</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>61512DD4-5CEC-4A23-9DB6-13836C4D46D3</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -430,7 +305,7 @@
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>argumenttreatemptyqueryasnil</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -457,34 +332,34 @@
 function run(argv) {
   ObjC.import('stdlib');
   const defaultDuration = $.getenv('default_duration');
+  const presetDuration1 = $.getenv('preset_duration_1');
+  const presetDuration2 = $.getenv('preset_duration_2');
+
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
   const ACCEPTED_UNITS_SECONDS = ['', 's', 'sec', 'secs', 'second', 'seconds'];
   const ACCEPTED_UNITS_MINUTES = ['m', 'min', 'mins', 'minute', 'minutes'];
   const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
+
+  const inputToTimeMap = (input) =&gt; {
+    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/ig)];
   
-  const input = (argv[0] || '').trim() || defaultDuration;
-  
-  const times = [...input.matchAll(/(\d*\.?\d+)\s*(\w*)/ig)];
-  
-  const timeMap = times.reduce((res, [_, digits, units]) =&gt; {
-    const number = Number(digits);
-    if (ACCEPTED_UNITS_SECONDS.includes(units)) {
-      res.seconds = number &gt; 0 &amp;&amp; number;
-    }
-    if (ACCEPTED_UNITS_MINUTES.includes(units)) {
-      res.minutes = number &gt; 0 &amp;&amp; number;
-    }
-    if (ACCEPTED_UNITS_HOURS.includes(units)) {
-      res.hours = number &gt; 0 &amp;&amp; number;
-    }
-    
-    return res;
-  }, {});
+    return times.reduce((res, [_, digits, units]) =&gt; {
+      const number = Number(digits);
+      if (ACCEPTED_UNITS_SECONDS.includes(units)) {
+        res.seconds = number &gt; 0 &amp;&amp; number;
+      }
+      if (ACCEPTED_UNITS_MINUTES.includes(units)) {
+        res.minutes = number &gt; 0 &amp;&amp; number;
+      }
+      if (ACCEPTED_UNITS_HOURS.includes(units)) {
+        res.hours = number &gt; 0 &amp;&amp; number;
+      }
+      
+      return res;
+    }, {});
+  };
 
   const isValidTimeMap = (timeMap) =&gt; !!timeMap.seconds || !!timeMap.minutes || !!timeMap.hours;
-
-  let title = '';
-  let subtitle = '';
 
   const timeMapToReadableTime = (timeMap) =&gt; {
     const readableTime = [];
@@ -535,46 +410,68 @@ function run(argv) {
     }, 0);
   };
 
-  const seconds = timeMapToSeconds(timeMap);
-  
-  if (!argv[0]) {
-    title = 'Set timer...';
-    subtitle = `Hit ↵ to set to ${timeMapToReadableTime(timeMap)} or provide duration`;
-  } else if (isValidTimeMap(timeMap)) {
-    if (seconds &lt;= MAX_DELAY_IN_SECONDS) {
-      title = `Set timer for ${timeMapToReadableTime(timeMap)}`;
-    } else {
-      title = 'Too long delay!';
-    }
-  } else {
-    title = 'Can\'t understand that!';
-  }
+  const createArgumentItem = () =&gt; {
+    const timeMap = inputToTimeMap(argv[0] || defaultDuration);
+    const seconds = timeMapToSeconds(timeMap);
+    let title = '';
+    let subtitle = '';
 
-  const items = [
-    {
+    if (!argv[0]) {
+      title = 'Set timer...';
+      subtitle = `Hit ↵ to set to ${timeMapToReadableTime(timeMap)} or provide duration`;
+    } else if (isValidTimeMap(timeMap)) {
+      if (seconds &lt;= MAX_DELAY_IN_SECONDS) {
+        title = `Set timer for ${timeMapToReadableTime(timeMap)}`;
+      } else {
+        title = 'Too long delay!';
+      }
+    } else {
+      title = 'Can\'t understand that!';
+    }
+    
+    return {
       uid: 'timer',
       title,
       subtitle,
       arg: seconds,
-    },
+    };
+  }
+
+  const createPresetItem = (input, uid) =&gt; {
+    const timeMap = inputToTimeMap(input || defaultDuration);
+    const seconds = timeMapToSeconds(timeMap);
+
+    return {
+      uid,
+      title: `Set timer for ${timeMapToReadableTime(timeMap)}`,
+      arg: seconds,
+    };
+  }
+
+  const items = [
+    createArgumentItem(),
   ];
+
+  if (!argv[0]) {
+    items.push(createPresetItem(presetDuration1, 'timer-preset-1'));
+    items.push(createPresetItem(presetDuration2, 'timer-preset-2'));
+  }
   
   return JSON.stringify({
     items,
   });
 }
-
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>parse_input.js</string>
 				<key>subtext</key>
 				<string>10mins, 45 minutes, 19 secs, 1h, etc.</string>
 				<key>title</key>
 				<string>Set timer...</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>8</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -602,26 +499,6 @@ function run(argv) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>F596D83C-3346-449D-9BCA-3191EE4113AA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>timer_time</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>3EE8C2D6-858C-4F99-897F-DAE037BDE1B3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -668,88 +545,6 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>t 5m</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Set timer for 5 minutes</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>49576F9E-2FA6-474D-9575-35693C5A1533</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>timer_time</key>
-					<string>5m</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>EE2184C0-8A5A-48F0-9116-0F8E81F1C3DC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>t 10m</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Set timer for 10 minutes</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>CE4941AE-EF58-4C47-9034-35921DDADF94</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>timer_time</key>
-					<string>10m</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>6EAEA393-462C-4621-950B-4C57BAB46B23</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>start_timer</string>
 				<key>passinputasargument</key>
@@ -776,7 +571,7 @@ function run(argv) {
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Set pomodoro timer for {var:pomodoro_duration} minutes</string>
+				<string>Set Pomodoro timer for {var:pomodoro_duration} minutes</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -823,7 +618,7 @@ function run(argv) {
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>parse_time.js</string>
+				<string>input_to_seconds.js</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -843,14 +638,18 @@ function run(argv) {
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>timer_seconds</key>
-					<string>{query}</string>
+					<key>duration_input</key>
+					<string>{var:pomodoro_duration}m</string>
+					<key>timer_is_pomodoro</key>
+					<string>1</string>
+					<key>timer_message</key>
+					<string>Pomodoro timer finished!</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>2B80824F-8439-4A1A-AE8E-83DB7260FDEA</string>
+			<string>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -863,18 +662,14 @@ function run(argv) {
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>timer_is_pomodoro</key>
-					<string>1</string>
-					<key>timer_message</key>
-					<string>Pomodoro timer finished!</string>
-					<key>timer_time</key>
-					<string>{var:pomodoro_duration}m</string>
+					<key>timer_seconds</key>
+					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</string>
+			<string>2B80824F-8439-4A1A-AE8E-83DB7260FDEA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -989,21 +784,6 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<true/>
-				<key>triggerid</key>
-				<string>show_message</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D4E7636D-BD88-4389-B968-F1B9A60D8977</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alignment</key>
 				<integer>2</integer>
 				<key>backgroundcolor</key>
@@ -1033,6 +813,21 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>show_message</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D4E7636D-BD88-4389-B968-F1B9A60D8977</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1053,15 +848,22 @@ function run(argv) {
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Timer workflow</string>
+	<string># Timer workflow
+## Duration examples
+- 10 mins
+- 1 hour 20 minutes
+- 35s
+- 50 seconds
+- 1h 30.5m
+- .5m</string>
 	<key>uidata</key>
 	<dict>
 		<key>0716703E-7BD0-4B4B-BE1B-0868313308E8</key>
 		<dict>
 			<key>xpos</key>
-			<real>1295</real>
+			<real>800</real>
 			<key>ypos</key>
-			<real>970</real>
+			<real>795</real>
 		</dict>
 		<key>2537D5F3-30DE-4B01-A420-0E0213E75DB6</key>
 		<dict>
@@ -1075,7 +877,7 @@ function run(argv) {
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>995</real>
+			<real>705</real>
 			<key>ypos</key>
 			<real>20</real>
 		</dict>
@@ -1084,9 +886,9 @@ function run(argv) {
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>420</real>
+			<real>400</real>
 			<key>ypos</key>
-			<real>520</real>
+			<real>250</real>
 		</dict>
 		<key>2CD78571-C416-465E-A9F7-E785A96FD7EB</key>
 		<dict>
@@ -1095,103 +897,73 @@ function run(argv) {
 			<key>note</key>
 			<string>Show message</string>
 			<key>xpos</key>
-			<real>995</real>
+			<real>500</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>390</real>
 		</dict>
 		<key>2CE6C410-EF4B-4320-B46A-4EBF29CB33BD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1295</real>
+			<real>800</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>545</real>
 		</dict>
 		<key>30B8359C-1436-47E8-9F04-6E5CFB234DFF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<real>540</real>
+			<real>255</real>
 			<key>ypos</key>
 			<real>20</real>
 		</dict>
 		<key>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</key>
 		<dict>
 			<key>xpos</key>
-			<real>1145</real>
+			<real>650</real>
 			<key>ypos</key>
-			<real>595</real>
-		</dict>
-		<key>3EE8C2D6-858C-4F99-897F-DAE037BDE1B3</key>
-		<dict>
-			<key>xpos</key>
-			<real>190</real>
-			<key>ypos</key>
-			<real>50</real>
+			<real>420</real>
 		</dict>
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>270</real>
+			<real>255</real>
 			<key>ypos</key>
-			<real>490</real>
+			<real>220</real>
 		</dict>
 		<key>43FFB0F6-CCE8-4D6A-9739-109271B175D6</key>
 		<dict>
 			<key>xpos</key>
-			<real>755</real>
+			<real>470</real>
 			<key>ypos</key>
 			<real>20</real>
-		</dict>
-		<key>49576F9E-2FA6-474D-9575-35693C5A1533</key>
-		<dict>
-			<key>xpos</key>
-			<real>30</real>
-			<key>ypos</key>
-			<real>135</real>
 		</dict>
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<dict>
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>520</real>
+			<real>250</real>
 		</dict>
 		<key>5EADE272-1C98-4269-AA31-CEE35511AEA3</key>
 		<dict>
 			<key>xpos</key>
-			<real>915</real>
+			<real>630</real>
 			<key>ypos</key>
 			<real>50</real>
-		</dict>
-		<key>61512DD4-5CEC-4A23-9DB6-13836C4D46D3</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<real>325</real>
-			<key>ypos</key>
-			<real>20</real>
 		</dict>
 		<key>6A8225AF-5ED4-49F3-A8B5-88CD54A75B0E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>495</real>
+			<real>470</real>
 			<key>ypos</key>
-			<real>490</real>
-		</dict>
-		<key>6EAEA393-462C-4621-950B-4C57BAB46B23</key>
-		<dict>
-			<key>xpos</key>
-			<real>190</real>
-			<key>ypos</key>
-			<real>280</real>
+			<real>220</real>
 		</dict>
 		<key>7D075033-BA78-4612-9D92-0BCE281E752A</key>
 		<dict>
@@ -1200,37 +972,30 @@ function run(argv) {
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>490</real>
+			<real>220</real>
 		</dict>
 		<key>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</key>
 		<dict>
 			<key>xpos</key>
-			<real>1295</real>
+			<real>800</real>
 			<key>ypos</key>
-			<real>845</real>
+			<real>670</real>
 		</dict>
 		<key>B4261B7A-3892-4ADF-B093-142A7EA566CD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<real>685</real>
+			<real>400</real>
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
 		<key>CDCB3301-BC5A-48C3-9837-990200E16543</key>
 		<dict>
 			<key>xpos</key>
-			<real>1175</real>
+			<real>680</real>
 			<key>ypos</key>
-			<real>800</real>
-		</dict>
-		<key>CE4941AE-EF58-4C47-9034-35921DDADF94</key>
-		<dict>
-			<key>xpos</key>
-			<real>30</real>
-			<key>ypos</key>
-			<real>250</real>
+			<real>625</real>
 		</dict>
 		<key>D4E7636D-BD88-4389-B968-F1B9A60D8977</key>
 		<dict>
@@ -1239,32 +1004,25 @@ function run(argv) {
 			<key>note</key>
 			<string>Show message</string>
 			<key>xpos</key>
-			<real>995</real>
+			<real>500</real>
 			<key>ypos</key>
-			<real>845</real>
+			<real>670</real>
 		</dict>
 		<key>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<real>1215</real>
+			<real>720</real>
 			<key>ypos</key>
-			<real>565</real>
-		</dict>
-		<key>EE2184C0-8A5A-48F0-9116-0F8E81F1C3DC</key>
-		<dict>
-			<key>xpos</key>
-			<real>190</real>
-			<key>ypos</key>
-			<real>165</real>
+			<real>390</real>
 		</dict>
 		<key>F596D83C-3346-449D-9BCA-3191EE4113AA</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>475</real>
+			<real>190</real>
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
@@ -1275,7 +1033,70 @@ function run(argv) {
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>25</string>
+				<string>1 minute</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Must be valid duration</string>
+			<key>label</key>
+			<string>Default timer duration (when no argument)</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>default_duration</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>5 minutes</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Must be valid duration</string>
+			<key>label</key>
+			<string>Preset 1 duration</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>preset_duration_1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>10 minutes</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Must be valid duration</string>
+			<key>label</key>
+			<string>Preset 2 duration</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>preset_duration_2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>15</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -1309,32 +1130,11 @@ function run(argv) {
 			<key>variable</key>
 			<string>pomodoro_duration</string>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>1 minute</string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Must be valid duration</string>
-			<key>label</key>
-			<string>Default timer duration (when no argument)</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>default_duration</string>
-		</dict>
 	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1.0</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string>http://colomolome.com</string>
 </dict>
