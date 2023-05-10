@@ -1,0 +1,18 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    ["@semantic-release/commit-analyzer", {
+      "preset": "angular",
+      "releaseRules": [
+        {"release": "patch"}
+      ]
+    }],
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/exec", {
+      "prepareCmd": "./.zip.sh ${nextRelease.version}"
+    }],
+    ["@semantic-release/github", {
+      "assets": ["Timer.alfredworkflow"]
+    }]
+  ]
+}
