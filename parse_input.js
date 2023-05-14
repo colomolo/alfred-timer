@@ -68,7 +68,7 @@ function run(argv) {
           seconds += amount * 60 * 60;
           break;
         case 'minutes':
-          seconds = seconds + amount * 60;
+          seconds += amount * 60;
           break;
         case 'seconds':
           seconds += amount;
@@ -81,18 +81,34 @@ function run(argv) {
     }, 0);
   };
 
+  const calculateShowAtTime = (seconds) => {
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: false,
+    };
+
+    const showTime = Date.now() + seconds * 1000;
+
+    return new Intl.DateTimeFormat('en-US', options).format(showTime);
+  };
+
   const createArgumentItem = () => {
     const timeMap = inputToTimeMap(argv[0] || defaultDuration);
     const seconds = timeMapToSeconds(timeMap);
+    const readableTime = timeMapToReadableTime(timeMap);
+    const showAtTime = calculateShowAtTime(seconds);
     let title = '';
     let subtitle = '';
 
     if (!argv[0]) {
       title = 'Set timer...';
-      subtitle = `Hit ↵ to set to ${timeMapToReadableTime(timeMap)} or provide duration`;
+      subtitle = `Hit ↵ to set to ${readableTime} or provide duration`;
     } else if (isValidTimeMap(timeMap)) {
       if (seconds <= MAX_DELAY_IN_SECONDS) {
-        title = `Set timer for ${timeMapToReadableTime(timeMap)}`;
+        title = `Set timer for ${readableTime}`;
+        subtitle = `Will fire at ${showAtTime}`;
       } else {
         title = 'Too long delay!';
       }
@@ -105,17 +121,25 @@ function run(argv) {
       title,
       subtitle,
       arg: seconds,
+      variables: {
+        timer_show_at: showAtTime,
+      },
     };
   }
 
   const createPresetItem = (input, uid) => {
     const timeMap = inputToTimeMap(input || defaultDuration);
     const seconds = timeMapToSeconds(timeMap);
+    const readableTime = timeMapToReadableTime(timeMap);
+    const showAtTime = calculateShowAtTime(seconds);
 
     return {
       uid,
-      title: `Set timer for ${timeMapToReadableTime(timeMap)}`,
+      title: `Set timer for ${readableTime}`,
       arg: seconds,
+      variables: {
+        timer_show_at: showAtTime,
+      },
     };
   }
 

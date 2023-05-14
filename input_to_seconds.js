@@ -34,7 +34,7 @@ function run(argv) {
           seconds += amount * 60 * 60;
           break;
         case 'minutes':
-          seconds = seconds + amount * 60;
+          seconds += amount * 60;
           break;
         case 'seconds':
           seconds += amount;
