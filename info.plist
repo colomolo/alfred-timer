@@ -1134,7 +1134,7 @@ function run(argv) {
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>http://colomolome.com</string>
 </dict>
