@@ -11,6 +11,10 @@
     ["@semantic-release/exec", {
       "prepareCmd": "./.zip.sh ${nextRelease.version}"
     }],
+    ["@semantic-release/git", {
+      "assets": ["info.plist"],
+      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+    }],
     ["@semantic-release/github", {
       "assets": ["Timer.alfredworkflow"]
     }]
