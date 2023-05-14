@@ -1,7 +1,26 @@
 # Timer
-[Alfred](https://www.alfredapp.com/) workflow that allows you to set up timers.
+Simple [Alfred](https://www.alfredapp.com/) workflow for setting up short timers with a few keystrokes.
 
 ## Usage
-Pass duration as an argument and Timer will understand it. You can also use 'tp' keyword to start pomodoro timer which has customizable duration from 15 to 30 minutes.
+Use keyword `t` to init Timer. Hit ↵ to set up Timer to default duration (configurable) or pass duration as an argument. Specify timer message. Timer is set!
+
+Set up two presets for the most often used time durations.
+
+Use `tp` keyword to start pomodoro timer which has customizable duration from 15 to 30 minutes.
+
+### Duration input examples
+- 10 mins 10
+- 1 hour 20 minutes
+- 35s
+- 50 seconds
+- 1h 30.5m
+- .5m
+
+### Duration input formats
+Hours – h, hr, hrs, hour, hours.  
+Minutes – m, min, mins, minute, minutes.  
+Seconds – s, sec, secs, second, seconds.
+
+If no time unit is provided, it is counted as seconds.
 
 ![](./timer-example.gif)
