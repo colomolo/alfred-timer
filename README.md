@@ -1,3 +1,4 @@
+![Timer workflow](./icon.png)
 # Timer
 Simple [Alfred](https://www.alfredapp.com/) workflow for setting up short timers with a few keystrokes.
 
