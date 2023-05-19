@@ -427,14 +427,14 @@ function run(argv) {
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>timer_seconds</key>
+					<key>timer_message</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>F596D83C-3346-449D-9BCA-3191EE4113AA</string>
+			<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -447,14 +447,14 @@ function run(argv) {
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>timer_message</key>
+					<key>timer_seconds</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
+			<string>F596D83C-3346-449D-9BCA-3191EE4113AA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -554,30 +554,6 @@ function run(argv) {
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>duration_input</key>
-					<string>{var:pomodoro_duration}m</string>
-					<key>timer_is_pomodoro</key>
-					<string>1</string>
-					<key>timer_message</key>
-					<string>Pomodoro timer finished!</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
 					<key>timer_seconds</key>
 					<string>{query}</string>
 				</dict>
@@ -592,15 +568,24 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<true/>
-				<key>triggerid</key>
-				<string>start_timer</string>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>duration_input</key>
+					<string>{var:pomodoro_duration}m</string>
+					<key>timer_is_pomodoro</key>
+					<string>1</string>
+					<key>timer_message</key>
+					<string>Pomodoro timer finished!</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>2CD78571-C416-465E-A9F7-E785A96FD7EB</string>
+			<string>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -620,6 +605,21 @@ function run(argv) {
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>start_timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>2CD78571-C416-465E-A9F7-E785A96FD7EB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -700,6 +700,21 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>show_message</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D4E7636D-BD88-4389-B968-F1B9A60D8977</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alignment</key>
 				<integer>2</integer>
 				<key>backgroundcolor</key>
@@ -725,21 +740,6 @@ function run(argv) {
 			<string>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<true/>
-				<key>triggerid</key>
-				<string>show_message</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D4E7636D-BD88-4389-B968-F1B9A60D8977</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -994,7 +994,7 @@ function run(argv) {
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>15</string>
+				<string>25</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -1029,8 +1029,6 @@ function run(argv) {
 			<string>pomodoro_duration</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.0.2</string>
 	<key>webaddress</key>
