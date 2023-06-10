@@ -20,6 +20,16 @@
 				<key>vitoclose</key>
 				<true/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F9193B9D-04A2-486B-A688-700CACE36B44</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Set timer with no message</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>2B80824F-8439-4A1A-AE8E-83DB7260FDEA</key>
 		<array>
@@ -212,6 +222,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F9193B9D-04A2-486B-A688-700CACE36B44</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Yuri Mazursky</string>
@@ -223,37 +246,6 @@
 	<string>Timer</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -478,6 +470,37 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -512,6 +535,28 @@ function run(argv) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>timer_message</key>
+					<string>Timer went off</string>
+					<key>timer_seconds</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F9193B9D-04A2-486B-A688-700CACE36B44</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -788,6 +833,21 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>show_message</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D4E7636D-BD88-4389-B968-F1B9A60D8977</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alignment</key>
 				<integer>2</integer>
 				<key>backgroundcolor</key>
@@ -813,21 +873,6 @@ function run(argv) {
 			<string>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<true/>
-				<key>triggerid</key>
-				<string>show_message</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D4E7636D-BD88-4389-B968-F1B9A60D8977</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -892,7 +937,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>555</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>250</real>
 		</dict>
 		<key>2CD78571-C416-465E-A9F7-E785A96FD7EB</key>
 		<dict>
@@ -928,7 +973,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>410</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>220</real>
 		</dict>
 		<key>43FFB0F6-CCE8-4D6A-9739-109271B175D6</key>
 		<dict>
@@ -942,7 +987,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>345</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>250</real>
 		</dict>
 		<key>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</key>
 		<dict>
@@ -965,14 +1010,14 @@ function run(argv) {
 			<key>xpos</key>
 			<real>625</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>220</real>
 		</dict>
 		<key>7A59166A-1515-4F01-B162-1832DA9CC72F</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>220</real>
 		</dict>
 		<key>7D075033-BA78-4612-9D92-0BCE281E752A</key>
 		<dict>
@@ -981,7 +1026,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>185</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>220</real>
 		</dict>
 		<key>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</key>
 		<dict>
@@ -1025,6 +1070,15 @@ function run(argv) {
 			<real>345</real>
 			<key>ypos</key>
 			<real>50</real>
+		</dict>
+		<key>F9193B9D-04A2-486B-A688-700CACE36B44</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>450</real>
+			<key>ypos</key>
+			<real>160</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1174,7 +1228,7 @@ function run(argv) {
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.0.5</string>
+	<string>1.0.4</string>
 	<key>webaddress</key>
 	<string>http://colomolome.com</string>
 </dict>
