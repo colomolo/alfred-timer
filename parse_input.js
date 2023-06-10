@@ -7,8 +7,8 @@ function run(argv) {
   const presetDuration2 = $.getenv('preset_duration_2');
 
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
-  const ACCEPTED_UNITS_SECONDS = ['', 's', 'sec', 'secs', 'second', 'seconds'];
-  const ACCEPTED_UNITS_MINUTES = ['m', 'min', 'mins', 'minute', 'minutes'];
+  const ACCEPTED_UNITS_SECONDS = ['s', 'sec', 'secs', 'second', 'seconds'];
+  const ACCEPTED_UNITS_MINUTES = ['', 'm', 'min', 'mins', 'minute', 'minutes'];
   const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
 
   const inputToTimeMap = (input) => {
