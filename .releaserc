@@ -4,6 +4,7 @@
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
       "releaseRules": [
+        {"release": "minor"},
         {"feat": "minor"},
         {"fix": "patch"},
         {"docs": "patch"},
