@@ -7,7 +7,7 @@ Use keyword `timer` (or custom keyword) to init Timer. Hit ↵ to set up Timer t
 
 Set up two presets for the most often used time durations.
 
-Use `pomodoro` keyword (or custom keyword) to start pomodoro timer which has customizable duration from 15 to 30 minutes.
+Use keyword `pomodoro` (or custom keyword) to start pomodoro timer which has customizable duration from 15 to 30 minutes.
 
 Timer also has two presets for your custom durations.
 
