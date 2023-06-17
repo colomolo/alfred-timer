@@ -4,7 +4,10 @@
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
       "releaseRules": [
-        {"release": "patch"}
+        {"feat": "minor"},
+        {"fix": "patch"},
+        {"docs": "patch"},
+        {"refactor": "patch"}
       ]
     }],
     "@semantic-release/release-notes-generator",
