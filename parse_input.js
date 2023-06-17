@@ -81,7 +81,7 @@ function run(argv) {
     }, 0);
   };
 
-  const calculateShowAtTime = (seconds) => {
+  const calculateFireTime = (seconds) => {
     const options = {
       hour: 'numeric',
       minute: 'numeric',
@@ -98,7 +98,6 @@ function run(argv) {
     const timeMap = inputToTimeMap(argv[0] || defaultDuration);
     const seconds = timeMapToSeconds(timeMap);
     const readableTime = timeMapToReadableTime(timeMap);
-    const showAtTime = calculateShowAtTime(seconds);
     let title = '';
     let subtitle = '';
 
@@ -108,7 +107,7 @@ function run(argv) {
     } else if (isValidTimeMap(timeMap)) {
       if (seconds <= MAX_DELAY_IN_SECONDS) {
         title = `Set timer for ${readableTime}`;
-        subtitle = `Will fire at ${showAtTime}`;
+        subtitle = `Will fire at ${calculateFireTime(seconds)}`;
       } else {
         title = 'Too long delay!';
       }
@@ -121,9 +120,6 @@ function run(argv) {
       title,
       subtitle,
       arg: seconds,
-      variables: {
-        timer_show_at: showAtTime,
-      },
     };
   }
 
@@ -131,15 +127,12 @@ function run(argv) {
     const timeMap = inputToTimeMap(input || defaultDuration);
     const seconds = timeMapToSeconds(timeMap);
     const readableTime = timeMapToReadableTime(timeMap);
-    const showAtTime = calculateShowAtTime(seconds);
 
     return {
       uid,
       title: `Set timer for ${readableTime}`,
+      subtitle: `Will fire at ${calculateFireTime(seconds)}`,
       arg: seconds,
-      variables: {
-        timer_show_at: showAtTime,
-      },
     };
   }
 

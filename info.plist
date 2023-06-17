@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2537D5F3-30DE-4B01-A420-0E0213E75DB6</key>
 		<array>
 			<dict>
@@ -83,19 +96,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>43FFB0F6-CCE8-4D6A-9739-109271B175D6</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<array>
 			<dict>
@@ -161,6 +161,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CDCB3301-BC5A-48C3-9837-990200E16543</key>
 		<array>
 			<dict>
@@ -213,7 +226,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>43FFB0F6-CCE8-4D6A-9739-109271B175D6</string>
+				<string>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -226,7 +239,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
+				<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -249,21 +262,76 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Calculating fire time...</string>
+				<key>script</key>
+				<string>function run(argv) {
+  ObjC.import('stdlib');
+  const seconds = $.getenv('timer_seconds');
+
+  const calculateFireAtTime = (seconds) =&gt; {
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: false,
+    };
+
+    const showTime = Date.now() + seconds * 1000;
+
+    return new Intl.DateTimeFormat('en-US', options).format(showTime);
+  };
+
+  const items = [{
+    title: 'Set timer message',
+    subtitle: `Will fire at ${calculateFireAtTime(seconds)}`,
+    arg: argv[0] || 'Beep-beep, timer went off!',
+  }];
+
+  return JSON.stringify({
+    rerun: 1,
+    items,
+  });
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>set_message.js</string>
 				<key>subtext</key>
 				<string></string>
-				<key>text</key>
+				<key>title</key>
 				<string>Set timer message</string>
+				<key>type</key>
+				<integer>8</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>43FFB0F6-CCE8-4D6A-9739-109271B175D6</string>
+			<string>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -283,6 +351,37 @@
 			<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -470,37 +569,6 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -539,6 +607,14 @@ function run(argv) {
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
@@ -548,7 +624,7 @@ function run(argv) {
 				<key>variables</key>
 				<dict>
 					<key>timer_message</key>
-					<string>Timer went off</string>
+					<string>Beep-beep, timer went off!</string>
 					<key>timer_seconds</key>
 					<string>{query}</string>
 				</dict>
@@ -912,7 +988,14 @@ function run(argv) {
 			<key>xpos</key>
 			<real>800</real>
 			<key>ypos</key>
-			<real>795</real>
+			<real>965</real>
+		</dict>
+		<key>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</key>
+		<dict>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>160</real>
 		</dict>
 		<key>2537D5F3-30DE-4B01-A420-0E0213E75DB6</key>
 		<dict>
@@ -926,7 +1009,7 @@ function run(argv) {
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>625</real>
+			<real>710</real>
 			<key>ypos</key>
 			<real>20</real>
 		</dict>
@@ -937,7 +1020,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>555</real>
 			<key>ypos</key>
-			<real>250</real>
+			<real>420</real>
 		</dict>
 		<key>2CD78571-C416-465E-A9F7-E785A96FD7EB</key>
 		<dict>
@@ -948,7 +1031,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>500</real>
 			<key>ypos</key>
-			<real>390</real>
+			<real>560</real>
 		</dict>
 		<key>2CE6C410-EF4B-4320-B46A-4EBF29CB33BD</key>
 		<dict>
@@ -957,37 +1040,28 @@ function run(argv) {
 			<key>xpos</key>
 			<real>800</real>
 			<key>ypos</key>
-			<real>545</real>
+			<real>715</real>
 		</dict>
 		<key>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</key>
 		<dict>
 			<key>xpos</key>
 			<real>650</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>590</real>
 		</dict>
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
 			<key>xpos</key>
 			<real>410</real>
 			<key>ypos</key>
-			<real>220</real>
-		</dict>
-		<key>43FFB0F6-CCE8-4D6A-9739-109271B175D6</key>
-		<dict>
-			<key>xpos</key>
-			<real>410</real>
-			<key>ypos</key>
-			<real>20</real>
+			<real>390</real>
 		</dict>
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<dict>
 			<key>xpos</key>
 			<real>345</real>
 			<key>ypos</key>
-			<real>250</real>
+			<real>420</real>
 		</dict>
 		<key>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</key>
 		<dict>
@@ -999,7 +1073,7 @@ function run(argv) {
 		<key>5EADE272-1C98-4269-AA31-CEE35511AEA3</key>
 		<dict>
 			<key>xpos</key>
-			<real>555</real>
+			<real>585</real>
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
@@ -1010,14 +1084,14 @@ function run(argv) {
 			<key>xpos</key>
 			<real>625</real>
 			<key>ypos</key>
-			<real>220</real>
+			<real>390</real>
 		</dict>
 		<key>7A59166A-1515-4F01-B162-1832DA9CC72F</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>220</real>
+			<real>390</real>
 		</dict>
 		<key>7D075033-BA78-4612-9D92-0BCE281E752A</key>
 		<dict>
@@ -1026,21 +1100,28 @@ function run(argv) {
 			<key>xpos</key>
 			<real>185</real>
 			<key>ypos</key>
-			<real>220</real>
+			<real>390</real>
 		</dict>
 		<key>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</key>
 		<dict>
 			<key>xpos</key>
 			<real>800</real>
 			<key>ypos</key>
-			<real>670</real>
+			<real>840</real>
+		</dict>
+		<key>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</key>
+		<dict>
+			<key>xpos</key>
+			<real>440</real>
+			<key>ypos</key>
+			<real>20</real>
 		</dict>
 		<key>CDCB3301-BC5A-48C3-9837-990200E16543</key>
 		<dict>
 			<key>xpos</key>
 			<real>680</real>
 			<key>ypos</key>
-			<real>625</real>
+			<real>795</real>
 		</dict>
 		<key>D4E7636D-BD88-4389-B968-F1B9A60D8977</key>
 		<dict>
@@ -1051,7 +1132,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>500</real>
 			<key>ypos</key>
-			<real>670</real>
+			<real>840</real>
 		</dict>
 		<key>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</key>
 		<dict>
@@ -1060,23 +1141,21 @@ function run(argv) {
 			<key>xpos</key>
 			<real>720</real>
 			<key>ypos</key>
-			<real>390</real>
+			<real>560</real>
 		</dict>
 		<key>F596D83C-3346-449D-9BCA-3191EE4113AA</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
 			<key>xpos</key>
-			<real>345</real>
+			<real>375</real>
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
 		<key>F9193B9D-04A2-486B-A688-700CACE36B44</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
+			<key>note</key>
+			<string>Start timer with no message</string>
 			<key>xpos</key>
-			<real>450</real>
+			<real>375</real>
 			<key>ypos</key>
 			<real>160</real>
 		</dict>
@@ -1091,7 +1170,7 @@ function run(argv) {
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
-				<false/>
+				<true/>
 				<key>trim</key>
 				<true/>
 			</dict>
@@ -1112,7 +1191,7 @@ function run(argv) {
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
-				<false/>
+				<true/>
 				<key>trim</key>
 				<true/>
 			</dict>
