@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
+				<string>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -126,7 +126,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
+				<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -161,11 +161,47 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5B3BFD3-94F9-4922-B013-18451DA92595</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD7DEF80-B045-4BE9-B2F5-82CA7E7343E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2AA64328-415B-4B9C-AF4E-248256C4EE6B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F820D096-F505-4C6B-A762-9BD1807D6493</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -214,6 +250,29 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>0716703E-7BD0-4B4B-BE1B-0868313308E8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>78A24474-0098-4EEF-B02A-90E0377BBC00</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D5B3BFD3-94F9-4922-B013-18451DA92595</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD7DEF80-B045-4BE9-B2F5-82CA7E7343E6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -569,6 +628,58 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env osascript -l JavaScript
+
+function run(argv) {
+  ObjC.import('stdlib');
+  const seconds = $.getenv('timer_seconds');
+
+  const showTime = Date.now() + seconds * 1000;
+
+  return String(showTime);
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>create_id.js</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}~+~{var:timer_message}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>timer_id</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>CD7DEF80-B045-4BE9-B2F5-82CA7E7343E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -583,6 +694,27 @@ function run(argv) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>F596D83C-3346-449D-9BCA-3191EE4113AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>D5B3BFD3-94F9-4922-B013-18451DA92595</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -607,10 +739,29 @@ function run(argv) {
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<true/>
+				<key>filename</key>
+				<string>timers.txt</string>
+				<key>filetext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>-1</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
+			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
-			<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
+			<string>F820D096-F505-4C6B-A762-9BD1807D6493</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -670,46 +821,6 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>start_timer</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>6A8225AF-5ED4-49F3-A8B5-88CD54A75B0E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>{var:pomodoro_keyword}</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Set Pomodoro timer for {var:pomodoro_duration} minutes</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>7D075033-BA78-4612-9D92-0BCE281E752A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<true/>
 				<key>escaping</key>
@@ -753,6 +864,46 @@ function run(argv) {
 			<string>3F55A876-18D0-4211-8548-526608B4D502</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>start_timer</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>6A8225AF-5ED4-49F3-A8B5-88CD54A75B0E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:pomodoro_keyword}</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Set Pomodoro timer for {var:pomodoro_duration} minutes</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7D075033-BA78-4612-9D92-0BCE281E752A</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -971,6 +1122,29 @@ function run(argv) {
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>sed -i '' "/^$timer_id~+~/d" "$alfred_workflow_cache/timers.txt"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>78A24474-0098-4EEF-B02A-90E0377BBC00</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Timer workflow
@@ -993,9 +1167,9 @@ function run(argv) {
 		<key>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</key>
 		<dict>
 			<key>xpos</key>
-			<real>585</real>
+			<real>685</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>50</real>
 		</dict>
 		<key>2537D5F3-30DE-4B01-A420-0E0213E75DB6</key>
 		<dict>
@@ -1009,7 +1183,7 @@ function run(argv) {
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>710</real>
+			<real>1060</real>
 			<key>ypos</key>
 			<real>20</real>
 		</dict>
@@ -1086,6 +1260,15 @@ function run(argv) {
 			<key>ypos</key>
 			<real>390</real>
 		</dict>
+		<key>78A24474-0098-4EEF-B02A-90E0377BBC00</key>
+		<dict>
+			<key>note</key>
+			<string>Delete fired timer</string>
+			<key>xpos</key>
+			<real>665</real>
+			<key>ypos</key>
+			<real>1075</real>
+		</dict>
 		<key>7A59166A-1515-4F01-B162-1832DA9CC72F</key>
 		<dict>
 			<key>xpos</key>
@@ -1102,6 +1285,13 @@ function run(argv) {
 			<key>ypos</key>
 			<real>390</real>
 		</dict>
+		<key>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</key>
+		<dict>
+			<key>xpos</key>
+			<real>760</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
 		<key>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</key>
 		<dict>
 			<key>xpos</key>
@@ -1115,6 +1305,13 @@ function run(argv) {
 			<real>440</real>
 			<key>ypos</key>
 			<real>20</real>
+		</dict>
+		<key>CD7DEF80-B045-4BE9-B2F5-82CA7E7343E6</key>
+		<dict>
+			<key>xpos</key>
+			<real>960</real>
+			<key>ypos</key>
+			<real>50</real>
 		</dict>
 		<key>CDCB3301-BC5A-48C3-9837-990200E16543</key>
 		<dict>
@@ -1134,6 +1331,13 @@ function run(argv) {
 			<key>ypos</key>
 			<real>840</real>
 		</dict>
+		<key>D5B3BFD3-94F9-4922-B013-18451DA92595</key>
+		<dict>
+			<key>xpos</key>
+			<real>900</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
 		<key>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</key>
 		<dict>
 			<key>colorindex</key>
@@ -1150,6 +1354,13 @@ function run(argv) {
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
+		<key>F820D096-F505-4C6B-A762-9BD1807D6493</key>
+		<dict>
+			<key>xpos</key>
+			<real>1060</real>
+			<key>ypos</key>
+			<real>155</real>
+		</dict>
 		<key>F9193B9D-04A2-486B-A688-700CACE36B44</key>
 		<dict>
 			<key>note</key>
@@ -1157,7 +1368,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>375</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>185</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
