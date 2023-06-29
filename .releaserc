@@ -4,11 +4,11 @@
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
       "releaseRules": [
-        {"release": "minor"},
-        {"feat": "minor"},
-        {"fix": "patch"},
-        {"docs": "patch"},
-        {"refactor": "patch"}
+        {"type": "release", "release": "minor"},
+        {"type": "feat", "release": "minor"},
+        {"type": "fix", "release": "patch"},
+        {"type": "docs", "release": "patch"},
+        {"type": "refactor", "release": "patch"}
       ]
     }],
     "@semantic-release/release-notes-generator",
