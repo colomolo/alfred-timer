@@ -5,11 +5,11 @@ Simple [Alfred](https://www.alfredapp.com/) workflow for setting up short timers
 ## Usage
 Use keyword `timer` (or custom keyword) to init Timer. Hit ↵ to set up Timer to default duration (configurable) or pass duration as an argument. Specify timer message. Timer is set!
 
-Set up two presets for the most often used time durations.
+Set up two presets for your custom time durations.
 
 Use keyword `pomodoro` (or custom keyword) to start pomodoro timer which has customizable duration from 15 to 30 minutes.
 
-Timer also has two presets for your custom durations.
+Use `timers` (or custom keyword) to see the list of active timers with option to cancel individual timers.
 
 ### Duration input examples
 - 10 mins 10

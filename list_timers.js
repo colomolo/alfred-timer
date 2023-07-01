@@ -17,10 +17,18 @@ function run(argv) {
 
   const items = Object.entries(timers).map(([id, message]) => {
     return {
-      uid: id,
       title: message,
       subtitle: `Will fire at ${calculateFireTime(id)}`,
+      arg: id,
     };
+  });
+
+  items.push({
+    title: items.length === 0 ? 'No active timers. Create new one?' : 'Create new',
+    arg: 'new',
+    icon: {
+      path: './add.png',
+    },
   });
 
   return JSON.stringify({

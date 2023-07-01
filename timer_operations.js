@@ -1,21 +1,25 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(argv) {
-  ObjC.import('stdlib');
-  const operation = $.getenv('timers_operation');
-  const timers = JSON.parse($.getenv('timers_list'));
-  const id = String($.getenv('timer_id'));
-  const message = $.getenv('timer_message');
+  const items = [
+  // {
+  //   title: 'Set new time',
+  //   arg: 'new_time',
+  // },
+  // {
+  //   title: 'Edit message',
+  //   arg: 'edit_message',
+  // },
+  {
+    title: 'Cancel timer',
+    arg: 'cancel',
+    icon: {
+      path: './cancel.png',
+    },
+  }];
 
-  switch(operation) {
-    case 'add':
-      timers[id] = message;
-      break;
-    case 'delete':
-      delete timers[id];
-      break;
-    default:
-  }
-
-  return JSON.stringify(timers, null, 2);
+  return JSON.stringify({
+	skipknowledge: true,
+    items,
+  });
 }
