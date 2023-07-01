@@ -13,6 +13,9 @@ function run(argv) {
   {
     title: 'Cancel timer',
     arg: 'cancel',
+    icon: {
+      path: './cancel.png',
+    },
   }];
 
   return JSON.stringify({
