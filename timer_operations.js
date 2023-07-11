@@ -6,7 +6,7 @@ function run(argv) {
     title: 'Set new time',
     arg: 'new_time',
     icon: {
-      path: './edit time.png',
+      path: './edit_time.png',
     },
   },
   // {

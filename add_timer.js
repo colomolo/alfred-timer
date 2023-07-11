@@ -6,10 +6,10 @@ function run(argv) {
   const id = String($.getenv('timer_id'));
   const message = $.getenv('timer_message');
 
-  let isPomodoro = '0';
+  let isPomodoro = false;
 
   try {
-    isPomodoro = $.getenv('timer_is_pomodoro');
+    isPomodoro = !!$.getenv('timer_is_pomodoro');
   } catch {}
 
   timers[id] = { message, isPomodoro };

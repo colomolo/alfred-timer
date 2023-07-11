@@ -4,12 +4,6 @@ function run(argv) {
   ObjC.import('stdlib');
   const timers = JSON.parse($.getenv('timers_list'));
 
-  let isPomodoro = '0';
-
-  try {
-    isPomodoro = $.getenv('timer_is_pomodoro');
-  } catch {}
-
   const calculateFireTime = (seconds) => {
     const options = {
       hour: 'numeric',
@@ -23,9 +17,12 @@ function run(argv) {
 
   const items = Object.entries(timers).map(([id, props]) => {
     return {
-      title: props.message,
-      subtitle: `Will fire at ${calculateFireTime(id)}`,
+      title: calculateFireTime(id),
+      subtitle: props.message,
       arg: id,
+      icon: {
+        path: !!props.isPomodoro ? './list_pomodoro.png' : './list_timer.png',
+      },
       variables: {
         'selected_timer_id': id,
         'timer_message': props.message,

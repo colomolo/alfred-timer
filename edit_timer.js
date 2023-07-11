@@ -4,10 +4,10 @@ function run(argv) {
   ObjC.import('stdlib');
   const message = $.getenv('timer_message');
 
-  let isPomodoro = '0';
+  let isPomodoro = false;
 
   try {
-    isPomodoro = $.getenv('timer_is_pomodoro');
+    isPomodoro = !!$.getenv('timer_is_pomodoro');
   } catch {}
 
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
@@ -109,7 +109,7 @@ function run(argv) {
       title = `Set new time for '${message}'`;
     } else if (isValidTimeMap(timeMap)) {
       if (seconds <= MAX_DELAY_IN_SECONDS) {
-        title = `Set '${message}' to fire in ${readableTime}`;
+        title = `Set '${message}' time to ${readableTime}`;
         subtitle = `Will fire at ${calculateFireTime(seconds)}`;
       } else {
         title = 'Too long delay!';
