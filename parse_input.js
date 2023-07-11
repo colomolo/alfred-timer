@@ -120,6 +120,9 @@ function run(argv) {
       title,
       subtitle,
       arg: seconds,
+      variables: {
+        'timer_seconds': seconds,
+      },
     };
   }
 
@@ -133,6 +136,9 @@ function run(argv) {
       title: `Set timer for ${readableTime}`,
       subtitle: `Will fire at ${calculateFireTime(seconds)}`,
       arg: seconds,
+      variables: {
+        'timer_seconds': seconds,
+      },
     };
   }
 

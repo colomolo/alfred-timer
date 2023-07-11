@@ -265,19 +265,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5EADE272-1C98-4269-AA31-CEE35511AEA3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>61C5C59A-981A-480A-BEA2-837D3C8F7CBE</key>
 		<array>
 			<dict>
@@ -437,7 +424,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
+				<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1145,30 +1132,7 @@ function run(argv) {
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict>
-					<key>timer_message</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>5EADE272-1C98-4269-AA31-CEE35511AEA3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>timer_seconds</key>
-					<string>{query}</string>
-				</dict>
+				<dict/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -1255,8 +1219,6 @@ function run(argv) {
 				<dict>
 					<key>timer_message</key>
 					<string>Beep-beep, timer went off!</string>
-					<key>timer_seconds</key>
-					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -2767,7 +2729,7 @@ console.log(JSON.stringify(argv));
 		<key>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</key>
 		<dict>
 			<key>xpos</key>
-			<real>765</real>
+			<real>695</real>
 			<key>ypos</key>
 			<real>175</real>
 		</dict>
@@ -2799,7 +2761,7 @@ console.log(JSON.stringify(argv));
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>1185</real>
+			<real>1115</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
@@ -2938,13 +2900,6 @@ console.log(JSON.stringify(argv));
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
-		<key>5EADE272-1C98-4269-AA31-CEE35511AEA3</key>
-		<dict>
-			<key>xpos</key>
-			<real>605</real>
-			<key>ypos</key>
-			<real>175</real>
-		</dict>
 		<key>61C5C59A-981A-480A-BEA2-837D3C8F7CBE</key>
 		<dict>
 			<key>xpos</key>
@@ -3055,7 +3010,7 @@ console.log(JSON.stringify(argv));
 		<key>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</key>
 		<dict>
 			<key>xpos</key>
-			<real>840</real>
+			<real>770</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
@@ -3126,7 +3081,7 @@ console.log(JSON.stringify(argv));
 		<key>CD7DEF80-B045-4BE9-B2F5-82CA7E7343E6</key>
 		<dict>
 			<key>xpos</key>
-			<real>1055</real>
+			<real>985</real>
 			<key>ypos</key>
 			<real>175</real>
 		</dict>
@@ -3160,7 +3115,7 @@ console.log(JSON.stringify(argv));
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>1185</real>
+			<real>1115</real>
 			<key>ypos</key>
 			<real>285</real>
 		</dict>
@@ -3231,7 +3186,7 @@ console.log(JSON.stringify(argv));
 		<key>F54D9C96-430C-4229-847D-4B20DCBFEB84</key>
 		<dict>
 			<key>xpos</key>
-			<real>985</real>
+			<real>915</real>
 			<key>ypos</key>
 			<real>175</real>
 		</dict>
