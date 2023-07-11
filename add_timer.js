@@ -9,7 +9,7 @@ function run(argv) {
   let isPomodoro = false;
 
   try {
-    isPomodoro = !!$.getenv('timer_is_pomodoro');
+    isPomodoro = JSON.parse($.getenv('timer_is_pomodoro'));
   } catch {}
 
   timers[id] = { message, isPomodoro };

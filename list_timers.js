@@ -26,7 +26,7 @@ function run(argv) {
         subtitle: message,
         arg: id,
         icon: {
-          path: !!isPomodoro ? './list_pomodoro.png' : './list_timer.png',
+          path: isPomodoro ? './list_pomodoro.png' : './list_timer.png',
         },
         variables: {
           'selected_timer_id': id,

@@ -7,7 +7,7 @@ function run(argv) {
   let isPomodoro = false;
 
   try {
-    isPomodoro = !!$.getenv('timer_is_pomodoro');
+    isPomodoro = JSON.parse($.getenv('timer_is_pomodoro'));
   } catch {}
 
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
