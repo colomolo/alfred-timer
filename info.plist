@@ -135,6 +135,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>381A734E-1012-432E-8243-ECAC94AAFDAD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>401EA77E-ED47-49AC-9E97-BC5F445A62AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3AFC312B-39EF-4D87-BDF2-3034B3447394</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>78616F6F-5CDD-4F93-AD06-381014B0566F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3C63A71A-0CA3-4BEA-AEAE-CB03D3355BE6</key>
 		<array>
 			<dict>
@@ -145,7 +171,7 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
@@ -205,6 +231,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>3F55A876-18D0-4211-8548-526608B4D502</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>516CDE24-C1D3-4566-A578-2FB9933522FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5E9253D-14C2-49EA-8EE4-CF88AEFB533C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -296,6 +335,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>7D075033-BA78-4612-9D92-0BCE281E752A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7A842E95-7F67-4D0B-81D3-2AF222E2F026</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7B18CFA1-4FA1-42D9-A1FF-90C86232188A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -407,6 +459,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BC97C6C0-6749-426D-9673-DB8BC9C56300</key>
+		<array/>
 		<key>C2234AC9-3A80-43A5-8F80-0DA65084973C</key>
 		<array>
 			<dict>
@@ -520,6 +574,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E5E9253D-14C2-49EA-8EE4-CF88AEFB533C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7A842E95-7F67-4D0B-81D3-2AF222E2F026</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>EA6761AC-A572-4207-B742-FD6A55A1E788</key>
 		<array>
 			<dict>
@@ -531,6 +608,30 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>F858B6A4-6EE3-43A2-8C73-E2FD6BF80304</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4AA666BF-A5A1-4F3F-B443-D507DD89B846</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>F858B6A4-6EE3-43A2-8C73-E2FD6BF80304</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7277813B-769A-4E50-BEBC-7B9C52F3B78F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>2C82DE11-535C-4671-931E-E6067269C61B</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1112,21 +1213,6 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<true/>
-				<key>triggerid</key>
-				<string>create_timer</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>27CACE72-45BE-4516-B2B6-CE738F5209D9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>add_timer</string>
 				<key>passinputasargument</key>
@@ -1140,6 +1226,21 @@ function run(argv) {
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>D755B2B0-59A3-41A6-A6E4-728D5A4F666E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>create_timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>27CACE72-45BE-4516-B2B6-CE738F5209D9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1162,6 +1263,236 @@ function run(argv) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>F9193B9D-04A2-486B-A688-700CACE36B44</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>delete_timer</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>7B18CFA1-4FA1-42D9-A1FF-90C86232188A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>edit_timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>516CDE24-C1D3-4566-A578-2FB9933522FA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>1</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>#!/usr/bin/env osascript -l JavaScript
+
+function run(argv) {
+  ObjC.import('stdlib');
+  const message = $.getenv('timer_message');
+  
+  const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
+  const ACCEPTED_UNITS_SECONDS = ['s', 'sec', 'secs', 'second', 'seconds'];
+  const ACCEPTED_UNITS_MINUTES = ['', 'm', 'min', 'mins', 'minute', 'minutes'];
+  const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
+
+  const inputToTimeMap = (input) =&gt; {
+    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/ig)];
+  
+    return times.reduce((res, [_, digits, units]) =&gt; {
+      const number = Number(digits);
+      if (ACCEPTED_UNITS_SECONDS.includes(units)) {
+        res.seconds = number &gt; 0 &amp;&amp; number;
+      }
+      if (ACCEPTED_UNITS_MINUTES.includes(units)) {
+        res.minutes = number &gt; 0 &amp;&amp; number;
+      }
+      if (ACCEPTED_UNITS_HOURS.includes(units)) {
+        res.hours = number &gt; 0 &amp;&amp; number;
+      }
+      
+      return res;
+    }, {});
+  };
+
+  const isValidTimeMap = (timeMap) =&gt; !!timeMap.seconds || !!timeMap.minutes || !!timeMap.hours;
+
+  const timeMapToReadableTime = (timeMap) =&gt; {
+    const readableTime = [];
+    const pr = new Intl.PluralRules('en-US');
+    
+    const endings = new Map([
+      ['one', ''],
+      ['two', 's'],
+      ['few', 's'],
+      ['other', 's'],
+    ]);
+    const pluralizeUnits = (n, unit) =&gt; {
+      const rule = pr.select(n);
+      const ending = endings.get(rule);
+      return `${unit}${ending}`;
+    };
+
+    if (timeMap.hours) {
+      readableTime.push(`${timeMap.hours} ${pluralizeUnits(timeMap.hours, 'hour')}`);
+    }
+    if (timeMap.minutes) {
+      readableTime.push(`${timeMap.minutes} ${pluralizeUnits(timeMap.minutes, 'minute')}`);
+    }
+    if (timeMap.seconds) {
+      readableTime.push(`${timeMap.seconds} ${pluralizeUnits(timeMap.seconds, 'second')}`);
+    }
+
+    return new Intl.ListFormat('en', { style: 'long', type: 'conjunction' }).format(readableTime);
+  };
+
+  const timeMapToSeconds = (timeMap) =&gt; {
+    return Object.entries(timeMap).reduce((seconds, [unit, amount]) =&gt; {
+      switch (unit) {
+        case 'hours':
+          seconds += amount * 60 * 60;
+          break;
+        case 'minutes':
+          seconds += amount * 60;
+          break;
+        case 'seconds':
+          seconds += amount;
+          break;
+        default:
+          break;
+      }
+
+      return seconds;
+    }, 0);
+  };
+
+  const calculateFireTime = (seconds) =&gt; {
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: false,
+    };
+
+    const showTime = Date.now() + seconds * 1000;
+
+    return new Intl.DateTimeFormat('en-US', options).format(showTime);
+  };
+
+  const createEditTimeItem = () =&gt; {
+    const timeMap = inputToTimeMap(argv[0]);
+    const seconds = timeMapToSeconds(timeMap);
+    const readableTime = timeMapToReadableTime(timeMap);
+    let title = '';
+    let subtitle = '';
+
+    if (!argv[0]) {
+      title = `Set new time for '${message}'`;
+    } else if (isValidTimeMap(timeMap)) {
+      if (seconds &lt;= MAX_DELAY_IN_SECONDS) {
+        title = `Set '${message}' to fire in ${readableTime}`;
+        subtitle = `Will fire at ${calculateFireTime(seconds)}`;
+      } else {
+        title = 'Too long delay!';
+      }
+    } else {
+      title = 'Can\'t understand that!';
+    }
+    
+    return {
+      uid: 'timer',
+      title,
+      subtitle,
+      arg: seconds,
+      variables: {
+        'timer_seconds': seconds,
+        'timer_message': message,
+      },
+    };
+  };
+
+  return JSON.stringify({
+    rerun: 1,
+    items: [
+      createEditTimeItem(),
+    ],
+  });
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>edit_timer.js</string>
+				<key>subtext</key>
+				<string>10mins, 45 minutes, 19 secs, 1h, etc.</string>
+				<key>title</key>
+				<string>Set new time for '{var:timer_message}'</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E5E9253D-14C2-49EA-8EE4-CF88AEFB533C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:selected_timer_id}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7A842E95-7F67-4D0B-81D3-2AF222E2F026</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1351,6 +1682,37 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>381A734E-1012-432E-8243-ECAC94AAFDAD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>availableviaurlhandler</key>
 				<true/>
 				<key>triggerid</key>
@@ -1379,6 +1741,25 @@ function run(argv) {
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>delete_timer</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>77FC032A-D036-41A6-B539-A0DA7D27BB56</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1417,27 +1798,8 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>delete_timer</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>77FC032A-D036-41A6-B539-A0DA7D27BB56</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
-				<string>{var:selected_timer}</string>
+				<string>{var:selected_timer_id}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -1447,6 +1809,14 @@ function run(argv) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>0CFDEE92-9951-4E7E-8620-D385EA1AE8E3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>4AA666BF-A5A1-4F3F-B443-D507DD89B846</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1541,6 +1911,25 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>edit_timer</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>7277813B-769A-4E50-BEBC-7B9C52F3B78F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1619,6 +2008,66 @@ function run(argv) {
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
+						<string>cancel</string>
+						<key>outputlabel</key>
+						<string>cancel</string>
+						<key>uid</key>
+						<string>F858B6A4-6EE3-43A2-8C73-E2FD6BF80304</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>new_time</string>
+						<key>outputlabel</key>
+						<string>new time</string>
+						<key>uid</key>
+						<string>2C82DE11-535C-4671-931E-E6067269C61B</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>edit_message</string>
+						<key>outputlabel</key>
+						<string>edit message</string>
+						<key>uid</key>
+						<string>984CFF4E-F88F-48EA-921F-27CCFCB4A5F9</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>EA6761AC-A572-4207-B742-FD6A55A1E788</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
 						<string>new</string>
 						<key>outputlabel</key>
 						<string>new</string>
@@ -1661,47 +2110,12 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{query}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>cancel</string>
-						<key>outputlabel</key>
-						<string>cancel</string>
-						<key>uid</key>
-						<string>F858B6A4-6EE3-43A2-8C73-E2FD6BF80304</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>EA6761AC-A572-4207-B742-FD6A55A1E788</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict>
-					<key>selected_timer</key>
-					<string>{query}</string>
-				</dict>
+				<dict/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -1944,6 +2358,14 @@ function run(argv) {
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>78616F6F-5CDD-4F93-AD06-381014B0566F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
@@ -2072,6 +2494,7 @@ function run(argv) {
 function run(argv) {
   ObjC.import('stdlib');
   const timers = JSON.parse($.getenv('timers_list'));
+console.log(JSON.stringify(argv));
   const id = String(argv[0]);
 
   delete timers[id];
@@ -2330,447 +2753,517 @@ function run(argv) {
 		<key>0716703E-7BD0-4B4B-BE1B-0868313308E8</key>
 		<dict>
 			<key>xpos</key>
-			<real>960</real>
+			<real>495</real>
 			<key>ypos</key>
-			<real>1360</real>
+			<real>1830</real>
 		</dict>
 		<key>0CFDEE92-9951-4E7E-8620-D385EA1AE8E3</key>
 		<dict>
 			<key>xpos</key>
-			<real>1920</real>
+			<real>1510</real>
 			<key>ypos</key>
-			<real>665</real>
+			<real>1090</real>
 		</dict>
 		<key>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</key>
 		<dict>
 			<key>xpos</key>
-			<real>685</real>
+			<real>765</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>175</real>
 		</dict>
 		<key>2537D5F3-30DE-4B01-A420-0E0213E75DB6</key>
 		<dict>
 			<key>xpos</key>
-			<real>185</real>
-			<key>ypos</key>
-			<real>20</real>
-		</dict>
-		<key>27CACE72-45BE-4516-B2B6-CE738F5209D9</key>
-		<dict>
-			<key>xpos</key>
-			<real>30</real>
+			<real>190</real>
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
-		<key>2875DD2B-60C5-4BD4-A3CB-78B9483924F5</key>
+		<key>27CACE72-45BE-4516-B2B6-CE738F5209D9</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>11</integer>
+			<integer>5</integer>
 			<key>xpos</key>
-			<real>1125</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>290</real>
+		</dict>
+		<key>2875DD2B-60C5-4BD4-A3CB-78B9483924F5</key>
+		<dict>
+			<key>xpos</key>
+			<real>660</real>
+			<key>ypos</key>
+			<real>1330</real>
 		</dict>
 		<key>2AA64328-415B-4B9C-AF4E-248256C4EE6B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>1105</real>
+			<real>1185</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>145</real>
 		</dict>
 		<key>2AA8618F-9BD5-40B7-85AB-7A15CF5AB2AD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<real>1035</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>1485</real>
+			<real>1955</real>
 		</dict>
 		<key>2B80824F-8439-4A1A-AE8E-83DB7260FDEA</key>
 		<dict>
 			<key>xpos</key>
-			<real>555</real>
+			<real>560</real>
 			<key>ypos</key>
-			<real>335</real>
+			<real>585</real>
 		</dict>
 		<key>2CD78571-C416-465E-A9F7-E785A96FD7EB</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>500</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>580</real>
+			<real>1050</real>
 		</dict>
 		<key>2CE6C410-EF4B-4320-B46A-4EBF29CB33BD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1155</real>
+			<real>690</real>
 			<key>ypos</key>
-			<real>1200</real>
+			<real>1670</real>
 		</dict>
 		<key>30B22879-CC7B-42F5-9E7A-0927BC967F19</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>1310</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>705</real>
+			<real>1175</real>
 		</dict>
 		<key>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>185</real>
 			<key>ypos</key>
-			<real>610</real>
+			<real>1080</real>
+		</dict>
+		<key>381A734E-1012-432E-8243-ECAC94AAFDAD</key>
+		<dict>
+			<key>note</key>
+			<string>Timers list hotkey</string>
+			<key>xpos</key>
+			<real>35</real>
+			<key>ypos</key>
+			<real>715</real>
 		</dict>
 		<key>3AFC312B-39EF-4D87-BDF2-3034B3447394</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<real>1465</real>
+			<real>1000</real>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1300</real>
 		</dict>
 		<key>3C63A71A-0CA3-4BEA-AEAE-CB03D3355BE6</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
 			<key>xpos</key>
-			<real>1670</real>
+			<real>1205</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>1190</real>
 		</dict>
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
 		<dict>
 			<key>xpos</key>
-			<real>410</real>
+			<real>415</real>
 			<key>ypos</key>
-			<real>305</real>
+			<real>555</real>
 		</dict>
 		<key>401EA77E-ED47-49AC-9E97-BC5F445A62AA</key>
 		<dict>
 			<key>xpos</key>
-			<real>185</real>
+			<real>190</real>
 			<key>ypos</key>
-			<real>470</real>
+			<real>715</real>
 		</dict>
 		<key>415EF4CB-FA65-43BE-A45F-548067735408</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>185</real>
 			<key>ypos</key>
-			<real>985</real>
+			<real>1455</real>
 		</dict>
 		<key>49D96E51-1C67-4840-889D-BBF6EAE29058</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>11</integer>
 			<key>xpos</key>
-			<real>1060</real>
+			<real>595</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>1330</real>
+		</dict>
+		<key>4AA666BF-A5A1-4F3F-B443-D507DD89B846</key>
+		<dict>
+			<key>xpos</key>
+			<real>1510</real>
+			<key>ypos</key>
+			<real>1145</real>
 		</dict>
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<dict>
 			<key>xpos</key>
-			<real>345</real>
+			<real>350</real>
 			<key>ypos</key>
-			<real>335</real>
+			<real>585</real>
+		</dict>
+		<key>516CDE24-C1D3-4566-A578-2FB9933522FA</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>35</real>
+			<key>ypos</key>
+			<real>420</real>
 		</dict>
 		<key>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</key>
 		<dict>
+			<key>note</key>
+			<string>Create timer hotkey</string>
 			<key>xpos</key>
-			<real>30</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>145</real>
 		</dict>
 		<key>5EADE272-1C98-4269-AA31-CEE35511AEA3</key>
 		<dict>
 			<key>xpos</key>
-			<real>585</real>
+			<real>605</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>175</real>
 		</dict>
 		<key>61C5C59A-981A-480A-BEA2-837D3C8F7CBE</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
 			<key>xpos</key>
-			<real>1605</real>
+			<real>1140</real>
 			<key>ypos</key>
-			<real>750</real>
+			<real>1220</real>
 		</dict>
 		<key>63F84176-406E-4CC4-B628-8094919F29EC</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>185</real>
 			<key>ypos</key>
-			<real>735</real>
+			<real>1205</real>
 		</dict>
 		<key>665220C5-F58E-4FDE-972A-A0120FEE0A43</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<real>500</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>1275</real>
+			<real>1745</real>
 		</dict>
 		<key>6C846015-4A08-4C53-8C36-E86C66928CF0</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
 			<key>xpos</key>
-			<real>1605</real>
+			<real>1140</real>
 			<key>ypos</key>
-			<real>590</real>
+			<real>1060</real>
 		</dict>
 		<key>6E6A8F6A-DF71-4481-A276-CB21B50292C0</key>
 		<dict>
 			<key>xpos</key>
-			<real>960</real>
+			<real>495</real>
 			<key>ypos</key>
-			<real>1515</real>
+			<real>1985</real>
+		</dict>
+		<key>7277813B-769A-4E50-BEBC-7B9C52F3B78F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>1585</real>
+			<key>ypos</key>
+			<real>1190</real>
 		</dict>
 		<key>77FC032A-D036-41A6-B539-A0DA7D27BB56</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<real>1995</real>
+			<real>1585</real>
 			<key>ypos</key>
-			<real>635</real>
+			<real>1060</real>
+		</dict>
+		<key>78616F6F-5CDD-4F93-AD06-381014B0566F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>1150</real>
+			<key>ypos</key>
+			<real>1330</real>
 		</dict>
 		<key>7A59166A-1515-4F01-B162-1832DA9CC72F</key>
 		<dict>
+			<key>note</key>
+			<string>Create pomodoro timer hotkey</string>
 			<key>xpos</key>
-			<real>30</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>305</real>
+			<real>555</real>
+		</dict>
+		<key>7A842E95-7F67-4D0B-81D3-2AF222E2F026</key>
+		<dict>
+			<key>xpos</key>
+			<real>370</real>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
+		<key>7B18CFA1-4FA1-42D9-A1FF-90C86232188A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<real>445</real>
+			<key>ypos</key>
+			<real>420</real>
 		</dict>
 		<key>7C20C02C-00E7-49DD-B0A6-B5719D205382</key>
 		<dict>
 			<key>xpos</key>
-			<real>1485</real>
+			<real>1020</real>
 			<key>ypos</key>
-			<real>725</real>
+			<real>1195</real>
 		</dict>
 		<key>7D075033-BA78-4612-9D92-0BCE281E752A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>185</real>
+			<real>190</real>
 			<key>ypos</key>
-			<real>305</real>
+			<real>555</real>
 		</dict>
 		<key>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</key>
 		<dict>
 			<key>xpos</key>
-			<real>760</real>
+			<real>840</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>145</real>
 		</dict>
 		<key>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</key>
 		<dict>
 			<key>xpos</key>
-			<real>1155</real>
+			<real>690</real>
 			<key>ypos</key>
-			<real>1325</real>
+			<real>1795</real>
 		</dict>
 		<key>9701F5CD-4679-485D-BC87-7857F3A7A442</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>11</integer>
 			<key>xpos</key>
-			<real>910</real>
+			<real>445</real>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1300</real>
 		</dict>
 		<key>B0698628-A4D6-43F6-89B9-D1B75D8734DE</key>
 		<dict>
 			<key>xpos</key>
-			<real>660</real>
+			<real>195</real>
 			<key>ypos</key>
-			<real>1275</real>
+			<real>1745</real>
 		</dict>
 		<key>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>145</real>
 		</dict>
 		<key>B16B00A7-7444-4E81-80C5-995615F79A89</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>345</real>
+			<real>350</real>
 			<key>ypos</key>
-			<real>470</real>
+			<real>715</real>
 		</dict>
 		<key>B7A1BC1B-96FE-4F94-9E3E-FA8EF8FDABFD</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>500</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1300</real>
 		</dict>
 		<key>BC97C6C0-6749-426D-9673-DB8BC9C56300</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>805</real>
+			<real>340</real>
 			<key>ypos</key>
-			<real>1080</real>
+			<real>1550</real>
 		</dict>
 		<key>C2234AC9-3A80-43A5-8F80-0DA65084973C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>500</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>705</real>
+			<real>1175</real>
 		</dict>
 		<key>CD7DEF80-B045-4BE9-B2F5-82CA7E7343E6</key>
 		<dict>
 			<key>xpos</key>
-			<real>975</real>
+			<real>1055</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>175</real>
 		</dict>
 		<key>CDBB3D0D-1C26-4123-83CB-CE3BCE2E0D3F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<real>500</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>1080</real>
+			<real>1550</real>
 		</dict>
 		<key>CDCB3301-BC5A-48C3-9837-990200E16543</key>
 		<dict>
 			<key>xpos</key>
-			<real>1035</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>1280</real>
+			<real>1750</real>
 		</dict>
 		<key>D4E7636D-BD88-4389-B968-F1B9A60D8977</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<real>500</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1425</real>
 		</dict>
 		<key>D755B2B0-59A3-41A6-A6E4-728D5A4F666E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>1105</real>
+			<real>1185</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>285</real>
 		</dict>
 		<key>E2325C37-6511-4918-AEF0-82CFBC0C77CE</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<real>1310</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1300</real>
 		</dict>
 		<key>E3AF76EC-CF3B-4288-8189-251AF888B11D</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<real>1310</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1425</real>
 		</dict>
 		<key>E40122BD-669B-47C9-9202-0C4F172BB0A0</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>655</real>
+			<real>190</real>
 			<key>ypos</key>
-			<real>1080</real>
+			<real>1550</real>
 		</dict>
 		<key>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<real>720</real>
+			<real>255</real>
 			<key>ypos</key>
-			<real>580</real>
+			<real>1050</real>
+		</dict>
+		<key>E5E9253D-14C2-49EA-8EE4-CF88AEFB533C</key>
+		<dict>
+			<key>xpos</key>
+			<real>190</real>
+			<key>ypos</key>
+			<real>420</real>
 		</dict>
 		<key>EA6761AC-A572-4207-B742-FD6A55A1E788</key>
 		<dict>
 			<key>xpos</key>
-			<real>1835</real>
+			<real>1370</real>
 			<key>ypos</key>
-			<real>740</real>
+			<real>1195</real>
 		</dict>
 		<key>F0B8FBEF-2C76-4575-826F-80CA7EAE11D9</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>11</integer>
 			<key>xpos</key>
-			<real>760</real>
+			<real>295</real>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1300</real>
 		</dict>
 		<key>F1330197-4EEB-40BD-A211-EADC78F86E0D</key>
 		<dict>
 			<key>xpos</key>
-			<real>815</real>
+			<real>350</real>
 			<key>ypos</key>
-			<real>1295</real>
+			<real>1765</real>
 		</dict>
 		<key>F54D9C96-430C-4229-847D-4B20DCBFEB84</key>
 		<dict>
 			<key>xpos</key>
-			<real>905</real>
+			<real>985</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>175</real>
 		</dict>
 		<key>F596D83C-3346-449D-9BCA-3191EE4113AA</key>
 		<dict>
 			<key>xpos</key>
-			<real>375</real>
+			<real>380</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>175</real>
 		</dict>
 		<key>F9193B9D-04A2-486B-A688-700CACE36B44</key>
 		<dict>
 			<key>note</key>
 			<string>Start timer with no message</string>
 			<key>xpos</key>
-			<real>375</real>
+			<real>380</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>300</real>
 		</dict>
 		<key>F975A28E-4AE0-47F2-913E-79E195255F5F</key>
 		<dict>
 			<key>xpos</key>
-			<real>1210</real>
+			<real>745</real>
 			<key>ypos</key>
-			<real>835</real>
+			<real>1305</real>
 		</dict>
 		<key>FC2DB4AA-A845-4547-BF78-6489CA4AD9A4</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>185</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>1330</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

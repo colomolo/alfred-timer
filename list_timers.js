@@ -4,6 +4,12 @@ function run(argv) {
   ObjC.import('stdlib');
   const timers = JSON.parse($.getenv('timers_list'));
 
+  let isPomodoro = '0';
+
+  try {
+    isPomodoro = $.getenv('timer_is_pomodoro');
+  } catch {}
+
   const calculateFireTime = (seconds) => {
     const options = {
       hour: 'numeric',
@@ -15,11 +21,16 @@ function run(argv) {
     return new Intl.DateTimeFormat('en-US', options).format(seconds);
   };
 
-  const items = Object.entries(timers).map(([id, message]) => {
+  const items = Object.entries(timers).map(([id, props]) => {
     return {
-      title: message,
+      title: props.message,
       subtitle: `Will fire at ${calculateFireTime(id)}`,
       arg: id,
+      variables: {
+        'selected_timer_id': id,
+        'timer_message': props.message,
+        'timer_is_pomodoro': props.isPomodoro,
+      },
     };
   });
 

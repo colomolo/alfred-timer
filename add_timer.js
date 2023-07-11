@@ -6,7 +6,13 @@ function run(argv) {
   const id = String($.getenv('timer_id'));
   const message = $.getenv('timer_message');
 
-  timers[id] = message;
+  let isPomodoro = '0';
+
+  try {
+    isPomodoro = $.getenv('timer_is_pomodoro');
+  } catch {}
+
+  timers[id] = { message, isPomodoro };
 
   return JSON.stringify(timers, null, 2);
 }
