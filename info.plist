@@ -1569,7 +1569,7 @@ function run(argv) {
 					<key>duration_input</key>
 					<string>{var:pomodoro_duration}m</string>
 					<key>timer_is_pomodoro</key>
-					<string>1</string>
+					<string>true</string>
 					<key>timer_message</key>
 					<string>Pomodoro timer finished!</string>
 				</dict>
