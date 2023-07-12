@@ -2,10 +2,13 @@
 
 function run(argv) {
   const items = [
-  // {
-  //   title: 'Set new time',
-  //   arg: 'new_time',
-  // },
+  {
+    title: 'Set new time',
+    arg: 'new_time',
+    icon: {
+      path: './edit_time.png',
+    },
+  },
   // {
   //   title: 'Edit message',
   //   arg: 'edit_message',

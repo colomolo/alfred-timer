@@ -9,7 +9,7 @@ Set up two presets for your custom time durations.
 
 Use keyword `pomodoro` (or custom keyword) to start pomodoro timer which has customizable duration from 15 to 30 minutes.
 
-Use `timers` (or custom keyword) to see the list of active timers with option to cancel individual timers.
+Use `timers` (or custom keyword) to see the list of active timers with option to edit or cancel individual timers.
 
 ### Duration input examples
 - 10 mins 10

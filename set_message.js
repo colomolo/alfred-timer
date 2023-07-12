@@ -4,6 +4,8 @@ function run(argv) {
   ObjC.import('stdlib');
   const seconds = $.getenv('timer_seconds');
 
+  const message = argv[0] || 'Beep-beep, timer went off!';
+
   const calculateFireTime = (seconds) => {
     const options = {
       hour: 'numeric',
@@ -20,7 +22,10 @@ function run(argv) {
   const items = [{
     title: 'Set timer message',
     subtitle: `Will fire at ${calculateFireTime(seconds)}`,
-    arg: argv[0] || 'Beep-beep, timer went off!',
+    arg: message,
+    variables: {
+      'timer_message': message,
+    },
   }];
 
   return JSON.stringify({
