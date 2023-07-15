@@ -252,6 +252,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5484F07A-48C5-4F69-923A-BC6303CF3F63</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CDCB3301-BC5A-48C3-9837-990200E16543</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>1419A3E7-7C85-4517-85A5-51F563AFC6FF</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</key>
 		<array>
 			<dict>
@@ -377,6 +392,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>87FB3BE3-E9FA-4634-8D26-CF55E1590CE1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4E2D740F-EA10-4148-A0EB-5045C31344EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>1419A3E7-7C85-4517-85A5-51F563AFC6FF</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -640,7 +670,19 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CDCB3301-BC5A-48C3-9837-990200E16543</string>
+				<string>87FB3BE3-E9FA-4634-8D26-CF55E1590CE1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6EF35CEF-8DD3-4917-9EFA-723A72E21E89</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5484F07A-48C5-4F69-923A-BC6303CF3F63</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2287,6 +2329,14 @@ function run(argv) {
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>78616F6F-5CDD-4F93-AD06-381014B0566F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>type</key>
@@ -2316,14 +2366,6 @@ function run(argv) {
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>FC2DB4AA-A845-4547-BF78-6489CA4AD9A4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.hidealfred</string>
-			<key>uid</key>
-			<string>78616F6F-5CDD-4F93-AD06-381014B0566F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2480,6 +2522,53 @@ console.log(JSON.stringify(argv));
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>soundname</key>
+				<string>Ping</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>4E2D740F-EA10-4148-A0EB-5045C31344EA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:sound_notification}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>sound</string>
+						<key>uid</key>
+						<string>1419A3E7-7C85-4517-85A5-51F563AFC6FF</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>noop</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>87FB3BE3-E9FA-4634-8D26-CF55E1590CE1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alignment</key>
 				<integer>2</integer>
 				<key>backgroundcolor</key>
@@ -2505,6 +2594,38 @@ console.log(JSON.stringify(argv));
 			<string>2CE6C410-EF4B-4320-B46A-4EBF29CB33BD</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:timer_is_pomodoro}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string>1</string>
+						<key>outputlabel</key>
+						<string>Pomodoro</string>
+						<key>uid</key>
+						<string>9D2956F8-CE78-4242-B92B-008EA9104674</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Regular</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>CDCB3301-BC5A-48C3-9837-990200E16543</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2557,28 +2678,28 @@ console.log(JSON.stringify(argv));
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{var:timer_is_pomodoro}</string>
+						<string>{var:large_text_notification}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
 						<integer>5</integer>
 						<key>matchstring</key>
-						<string>1</string>
+						<string></string>
 						<key>outputlabel</key>
-						<string>Pomodoro</string>
+						<string>large text</string>
 						<key>uid</key>
-						<string>9D2956F8-CE78-4242-B92B-008EA9104674</string>
+						<string>1419A3E7-7C85-4517-85A5-51F563AFC6FF</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>Regular</string>
+				<string>noop</string>
 				<key>hideelse</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>CDCB3301-BC5A-48C3-9837-990200E16543</string>
+			<string>5484F07A-48C5-4F69-923A-BC6303CF3F63</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2717,7 +2838,7 @@ console.log(JSON.stringify(argv));
 			<key>xpos</key>
 			<real>495</real>
 			<key>ypos</key>
-			<real>1830</real>
+			<real>1985</real>
 		</dict>
 		<key>0CFDEE92-9951-4E7E-8620-D385EA1AE8E3</key>
 		<dict>
@@ -2772,7 +2893,7 @@ console.log(JSON.stringify(argv));
 			<key>xpos</key>
 			<real>570</real>
 			<key>ypos</key>
-			<real>1955</real>
+			<real>2110</real>
 		</dict>
 		<key>2B80824F-8439-4A1A-AE8E-83DB7260FDEA</key>
 		<dict>
@@ -2795,9 +2916,9 @@ console.log(JSON.stringify(argv));
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>690</real>
+			<real>905</real>
 			<key>ypos</key>
-			<real>1670</real>
+			<real>1810</real>
 		</dict>
 		<key>30B22879-CC7B-42F5-9E7A-0927BC967F19</key>
 		<dict>
@@ -2875,6 +2996,13 @@ console.log(JSON.stringify(argv));
 			<key>ypos</key>
 			<real>1145</real>
 		</dict>
+		<key>4E2D740F-EA10-4148-A0EB-5045C31344EA</key>
+		<dict>
+			<key>xpos</key>
+			<real>905</real>
+			<key>ypos</key>
+			<real>1685</real>
+		</dict>
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<dict>
 			<key>xpos</key>
@@ -2890,6 +3018,13 @@ console.log(JSON.stringify(argv));
 			<real>35</real>
 			<key>ypos</key>
 			<real>420</real>
+		</dict>
+		<key>5484F07A-48C5-4F69-923A-BC6303CF3F63</key>
+		<dict>
+			<key>xpos</key>
+			<real>690</real>
+			<key>ypos</key>
+			<real>1905</real>
 		</dict>
 		<key>558A4AE4-2E4D-4302-B4B5-BFD5D1743519</key>
 		<dict>
@@ -2921,7 +3056,7 @@ console.log(JSON.stringify(argv));
 			<key>xpos</key>
 			<real>35</real>
 			<key>ypos</key>
-			<real>1745</real>
+			<real>1900</real>
 		</dict>
 		<key>6C846015-4A08-4C53-8C36-E86C66928CF0</key>
 		<dict>
@@ -2937,7 +3072,7 @@ console.log(JSON.stringify(argv));
 			<key>xpos</key>
 			<real>495</real>
 			<key>ypos</key>
-			<real>1985</real>
+			<real>2140</real>
 		</dict>
 		<key>7277813B-769A-4E50-BEBC-7B9C52F3B78F</key>
 		<dict>
@@ -3007,6 +3142,13 @@ console.log(JSON.stringify(argv));
 			<key>ypos</key>
 			<real>555</real>
 		</dict>
+		<key>87FB3BE3-E9FA-4634-8D26-CF55E1590CE1</key>
+		<dict>
+			<key>xpos</key>
+			<real>690</real>
+			<key>ypos</key>
+			<real>1720</real>
+		</dict>
 		<key>8AAAEB74-DA24-42CB-8D9B-2FD87B13A7BE</key>
 		<dict>
 			<key>xpos</key>
@@ -3017,9 +3159,9 @@ console.log(JSON.stringify(argv));
 		<key>91B179A3-BB5E-4BBF-93DF-21464F07AE2C</key>
 		<dict>
 			<key>xpos</key>
-			<real>690</real>
+			<real>905</real>
 			<key>ypos</key>
-			<real>1795</real>
+			<real>1935</real>
 		</dict>
 		<key>9701F5CD-4679-485D-BC87-7857F3A7A442</key>
 		<dict>
@@ -3033,7 +3175,7 @@ console.log(JSON.stringify(argv));
 			<key>xpos</key>
 			<real>195</real>
 			<key>ypos</key>
-			<real>1745</real>
+			<real>1900</real>
 		</dict>
 		<key>B13973F2-8D0C-4DC1-99D2-F2BA1610608B</key>
 		<dict>
@@ -3097,9 +3239,9 @@ console.log(JSON.stringify(argv));
 		<key>CDCB3301-BC5A-48C3-9837-990200E16543</key>
 		<dict>
 			<key>xpos</key>
-			<real>570</real>
+			<real>785</real>
 			<key>ypos</key>
-			<real>1750</real>
+			<real>1890</real>
 		</dict>
 		<key>D4E7636D-BD88-4389-B968-F1B9A60D8977</key>
 		<dict>
@@ -3181,7 +3323,7 @@ console.log(JSON.stringify(argv));
 			<key>xpos</key>
 			<real>350</real>
 			<key>ypos</key>
-			<real>1765</real>
+			<real>1920</real>
 		</dict>
 		<key>F54D9C96-430C-4229-847D-4B20DCBFEB84</key>
 		<dict>
@@ -3386,6 +3528,44 @@ console.log(JSON.stringify(argv));
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>pomodoro_duration</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Notify with large text</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>large_text_notification</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Notify with sound</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>sound_notification</string>
 		</dict>
 	</array>
 	<key>version</key>
