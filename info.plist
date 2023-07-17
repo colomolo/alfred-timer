@@ -3537,12 +3537,12 @@ console.log(JSON.stringify(argv));
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string></string>
+				<string>Show Large Type</string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Notify with large text</string>
+			<string>Notifications</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -3556,12 +3556,12 @@ console.log(JSON.stringify(argv));
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string></string>
+				<string>Play sound</string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Notify with sound</string>
+			<string></string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
