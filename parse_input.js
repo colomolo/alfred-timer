@@ -95,7 +95,7 @@ function run(argv) {
   };
 
   const parseSpecificTime = (input) => {
-    const timePattern = /(?:at\s+)?(\d{1,2})(?::(\d{2}))?\s*(am|pm|a|p)?/i;
+    const timePattern = /at\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm|a|p)?/i;
     const match = input.match(timePattern);
 
     if (!match) return null;
@@ -132,7 +132,11 @@ function run(argv) {
 
     const specificTimeSeconds = parseSpecificTime(argv[0]);
 
-    if (!argv[0]) {
+    if (specificTimeSeconds != null) {
+      seconds = specificTimeSeconds;
+      title = `Set timer for time: ${argv[0]}`;
+      subtitle = `Will fire at ${calculateFireTime(seconds)}`;
+    } else if (!argv[0]) {
       title = 'Set timer...';
       subtitle = `Hit ↵ to set to ${readableTime} or provide duration`;
     } else if (isValidTimeMap(timeMap)) {
@@ -142,10 +146,6 @@ function run(argv) {
       } else {
         title = 'Too long delay!';
       }
-    } else if (specificTimeSeconds != null) {
-      seconds = specificTimeSeconds;
-      title = `Set timer for time: ${argv[0]}`;
-      subtitle = `Will fire at ${calculateFireTime(seconds)}`;
     } else {
       title = 'Can\'t understand that!';
     }
