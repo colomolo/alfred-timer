@@ -4,7 +4,18 @@ function run(argv) {
   ObjC.import('stdlib');
   const timers = JSON.parse($.getenv('timers_list'));
 
-  const calculateFireTime = (seconds) => {
+  const calculateTimeLeft = (ms) => {
+    const now = new Date().getTime();
+    const fireInSeconds = Math.round((ms - now) / 1000);
+
+    const hours = Math.trunc(fireInSeconds / 3600);
+    const minutes = Math.trunc((fireInSeconds % 3600) / 60);
+    const seconds = fireInSeconds % 60;
+
+    return [hours, minutes, seconds];
+  };
+
+  const formatFireTime = (ms) => {
     const options = {
       hour: 'numeric',
       minute: 'numeric',
@@ -12,7 +23,18 @@ function run(argv) {
       hour12: false,
     };
 
-    return new Intl.DateTimeFormat('en-US', options).format(seconds);
+    const [hours, minutes, seconds] = calculateTimeLeft(ms);
+    let timeLeft = '';
+
+    if (hours > 0) {
+      timeLeft += `${hours}h `;
+    }
+    if (minutes > 0) {
+      timeLeft += `${minutes}m `;
+    }
+    timeLeft += `${seconds}s`;
+
+    return `Will fire at ${new Intl.DateTimeFormat('en-US', options).format(ms)} (${timeLeft} left)`;
   };
 
   const items = Object.keys(timers)
@@ -22,16 +44,16 @@ function run(argv) {
       const isPomodoro = timers[id].isPomodoro;
 
       return {
-        title: calculateFireTime(id),
+        title: formatFireTime(id),
         subtitle: message,
         arg: id,
         icon: {
           path: isPomodoro ? './list_pomodoro.png' : './list_timer.png',
         },
         variables: {
-          'selected_timer_id': id,
-          'timer_message': message,
-          'timer_is_pomodoro': isPomodoro,
+          selected_timer_id: id,
+          timer_message: message,
+          timer_is_pomodoro: isPomodoro,
         },
       };
     });
@@ -45,6 +67,7 @@ function run(argv) {
   });
 
   return JSON.stringify({
+    rerun: 1,
     items,
   });
 }
