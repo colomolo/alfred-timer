@@ -67,6 +67,7 @@ function run(argv) {
   });
 
   return JSON.stringify({
+    rerun: 1,
     items,
   });
 }
