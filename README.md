@@ -24,7 +24,7 @@ Hours – h, hr, hrs, hour, hours.
 Minutes – m, min, mins, minute, minutes.  
 Seconds – s, sec, secs, second, seconds.
 
-If no time unit is provided, it is counted as seconds.
+If no time unit is provided, it is counted as minutes.
 
 ![](./timer-example.gif)
 
