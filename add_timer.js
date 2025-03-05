@@ -6,7 +6,7 @@ function run(argv) {
   const id = String($.getenv('timer_id'));
   const message = $.getenv('timer_message');
 
-  let isPomodoro = false;
+  let isPomodoro = 'false';
 
   try {
     isPomodoro = JSON.parse($.getenv('timer_is_pomodoro'));
@@ -14,5 +14,5 @@ function run(argv) {
 
   timers[id] = { message, isPomodoro };
 
-  return JSON.stringify(timers, null, 2);
+  return JSON.stringify(timers);
 }

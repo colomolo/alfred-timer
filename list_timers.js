@@ -41,7 +41,7 @@ function run(argv) {
     .sort((timerA, timerB) => Number(timerA) - Number(timerB))
     .map((id) => {
       const message = timers[id].message;
-      const isPomodoro = timers[id].isPomodoro;
+      const isPomodoro = timers[id].isPomodoro === 'true';
 
       return {
         title: formatFireTime(id),
@@ -53,7 +53,7 @@ function run(argv) {
         variables: {
           selected_timer_id: id,
           timer_message: message,
-          timer_is_pomodoro: isPomodoro,
+          timer_is_pomodoro: isPomodoro ? 'true' : 'false',
         },
       };
     });

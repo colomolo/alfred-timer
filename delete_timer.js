@@ -3,9 +3,9 @@
 function run(argv) {
   ObjC.import('stdlib');
   const timers = JSON.parse($.getenv('timers_list'));
-  const id = String(argv[0]);
+  const id = $.getenv('selected_timer_id');
 
   delete timers[id];
 
-  return JSON.stringify(timers, null, 2);
+  return JSON.stringify(timers);
 }

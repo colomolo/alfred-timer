@@ -4,7 +4,7 @@ function run(argv) {
   ObjC.import('stdlib');
   const message = $.getenv('timer_message');
 
-  let isPomodoro = false;
+  let isPomodoro = "false";
 
   try {
     isPomodoro = JSON.parse($.getenv('timer_is_pomodoro'));
