@@ -44,6 +44,7 @@ function run(argv) {
       const isPomodoro = timers[id].isPomodoro === 'true';
 
       return {
+        uid: id,
         title: formatFireTime(id),
         subtitle: message,
         arg: id,

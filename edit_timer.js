@@ -2,6 +2,7 @@
 
 function run(argv) {
   ObjC.import('stdlib');
+  const selectedTimerId = $.getenv('selected_timer_id');
   const message = $.getenv('timer_message');
 
   let isPomodoro = "false";
@@ -124,6 +125,7 @@ function run(argv) {
       subtitle,
       arg: seconds,
       variables: {
+        'selected_timer_id': selectedTimerId,
         'timer_seconds': seconds,
         'timer_message': message,
         'timer_is_pomodoro': isPomodoro,
