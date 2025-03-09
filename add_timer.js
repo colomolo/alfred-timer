@@ -1,16 +1,10 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(argv) {
-  ObjC.import('stdlib');
-  const timers = JSON.parse($.getenv('timers_list'));
-  const id = String($.getenv('timer_id'));
-  const message = $.getenv('timer_message');
-
-  let isPomodoro = 'false';
-
-  try {
-    isPomodoro = JSON.parse($.getenv('timer_is_pomodoro'));
-  } catch {}
+  const id = argv[0];
+  const message = argv[1];
+  const isPomodoro = argv[2] || 'false';
+  const timers = JSON.parse(argv[3]);
 
   timers[id] = { message, isPomodoro };
 

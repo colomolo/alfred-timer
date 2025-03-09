@@ -6,5 +6,5 @@ function run(argv) {
 
   const showTime = Date.now() + seconds * 1000;
 
-  return String(showTime);
+  return JSON.stringify({ alfredworkflow: { arg: '', variables: { timer_id: String(showTime) } } });
 }
