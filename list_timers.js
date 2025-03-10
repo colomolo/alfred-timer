@@ -1,8 +1,7 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(argv) {
-  ObjC.import('stdlib');
-  const timers = JSON.parse($.getenv('timers_list'));
+  const timers = JSON.parse(argv[0]);
 
   const calculateTimeLeft = (ms) => {
     const now = new Date().getTime();
@@ -60,6 +59,7 @@ function run(argv) {
     });
 
   items.push({
+    uid: 'new',
     title: items.length === 0 ? 'No active timers. Create new one?' : 'Create new',
     arg: 'new',
     icon: {

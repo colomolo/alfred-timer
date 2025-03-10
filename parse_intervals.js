@@ -1,10 +1,9 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(argv) {
-  ObjC.import('stdlib');
-  const defaultDuration = $.getenv('default_duration');
-  const presetDuration1 = $.getenv('preset_duration_1');
-  const presetDuration2 = $.getenv('preset_duration_2');
+  const input = argv[0];
+  const intervals = (input || '').split(',').map((interval) => interval.trim());
+  let firstTimerSeconds;
 
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
   const ACCEPTED_UNITS_SECONDS = ['s', 'sec', 'secs', 'second', 'seconds'];
@@ -95,62 +94,81 @@ function run(argv) {
   };
 
   const createArgumentItem = () => {
-    const timeMap = inputToTimeMap(argv[0] || defaultDuration);
-    const seconds = timeMapToSeconds(timeMap);
-    const readableTime = timeMapToReadableTime(timeMap);
     let title = '';
     let subtitle = '';
 
     if (!argv[0]) {
-      title = 'Set timer...';
-      subtitle = `Hit ↵ to set to ${readableTime} or provide duration`;
-    } else if (isValidTimeMap(timeMap)) {
-      if (seconds <= MAX_DELAY_IN_SECONDS) {
-        title = `Set timer for ${readableTime}`;
-        subtitle = `Will fire at ${calculateFireTime(seconds)}`;
-      } else {
-        const readableMaxDelay = timeMapToReadableTime(
-          inputToTimeMap(`${MAX_DELAY_IN_SECONDS}s`)
-        );
-        title = `Too long delay! Max is ${readableMaxDelay}`;
-      }
+      title = 'Set interval timers...';
     } else {
-      title = "Can't understand that!";
+      const readableTimes = [];
+      let firstTimerFireTime;
+
+      for (let i = 0; i < intervals.length; i++) {
+        const timeMap = inputToTimeMap(intervals[i]);
+
+        if (!isValidTimeMap(timeMap)) {
+          title = "Can't understand that!";
+
+          return {
+            uid: 'intervals',
+            title,
+            subtitle,
+            arg: null,
+            variables: {
+              timer_seconds: null,
+            },
+          };
+        }
+
+        const seconds = timeMapToSeconds(timeMap);
+
+        if (seconds > MAX_DELAY_IN_SECONDS) {
+          const readableMaxDelay = timeMapToReadableTime(
+            inputToTimeMap(`${MAX_DELAY_IN_SECONDS}s`)
+          );
+          title = `Too long delay! Max is ${readableMaxDelay}`;
+          
+          return {
+            uid: 'intervals',
+            title,
+            subtitle,
+            arg: null,
+            variables: {
+              timer_seconds: null,
+            },
+          };
+        }
+
+        if (i === 0) {
+          firstTimerSeconds = seconds;
+          firstTimerFireTime = calculateFireTime(seconds);
+        }
+
+        readableTimes.push(timeMapToReadableTime(timeMap));
+      }
+
+      title = `Run timers in intervals: ${readableTimes.join(', ')}`;
+      subtitle = `First timer will fire at ${firstTimerFireTime}`;
     }
 
     return {
-      uid: 'timer',
+      uid: 'intervals',
       title,
       subtitle,
-      arg: seconds,
+      arg: JSON.stringify({
+        intervals: intervals.map((interval) => ({
+          delay: interval,
+          isPomodoro: 'false',
+          message: 'Timer is done!',
+        })),
+      }),
       variables: {
-        timer_seconds: seconds,
-      },
-    };
-  };
-
-  const createPresetItem = (input, uid) => {
-    const timeMap = inputToTimeMap(input || defaultDuration);
-    const seconds = timeMapToSeconds(timeMap);
-    const readableTime = timeMapToReadableTime(timeMap);
-
-    return {
-      uid,
-      title: `Set timer for ${readableTime}`,
-      subtitle: `Will fire at ${calculateFireTime(seconds)}`,
-      arg: seconds,
-      variables: {
-        timer_seconds: seconds,
+        timer_seconds: firstTimerSeconds,
       },
     };
   };
 
   const items = [createArgumentItem()];
-
-  if (!argv[0]) {
-    items.push(createPresetItem(presetDuration1, 'timer-preset-1'));
-    items.push(createPresetItem(presetDuration2, 'timer-preset-2'));
-  }
 
   return JSON.stringify({
     rerun: 1,
