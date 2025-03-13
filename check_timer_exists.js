@@ -4,5 +4,5 @@ function run(argv) {
   const id = argv[0];
   const timers = JSON.parse(argv[1]);
 
-  return !!timers[id];
+  return timers[id] ? 'true' : 'false';
 }
