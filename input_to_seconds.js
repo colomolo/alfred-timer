@@ -46,5 +46,5 @@ function run(argv) {
     }, 0);
   };
 
-  return String(timeMapToSeconds(inputToTimeMap(input)))
+  return String(timeMapToSeconds(inputToTimeMap(input)));
 }

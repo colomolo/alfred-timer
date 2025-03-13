@@ -238,19 +238,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>6E6A8F6A-DF71-4481-A276-CB21B50292C0</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>2AA8618F-9BD5-40B7-85AB-7A15CF5AB2AD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>7A59166A-1515-4F01-B162-1832DA9CC72F</key>
 		<array>
 			<dict>
@@ -491,7 +478,19 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
-				<string>6EF35CEF-8DD3-4917-9EFA-723A72E21E89</string>
+				<string>B0BFC5B5-42E4-4636-B115-F10685130DA0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>87FB3BE3-E9FA-4634-8D26-CF55E1590CE1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FF3DEFDF-2A33-48B8-8023-83430C79CC19</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -503,7 +502,19 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
-				<string>6EF35CEF-8DD3-4917-9EFA-723A72E21E89</string>
+				<string>B0BFC5B5-42E4-4636-B115-F10685130DA0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5484F07A-48C5-4F69-923A-BC6303CF3F63</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FF3DEFDF-2A33-48B8-8023-83430C79CC19</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -515,19 +526,31 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
-				<string>6EF35CEF-8DD3-4917-9EFA-723A72E21E89</string>
+				<string>B0BFC5B5-42E4-4636-B115-F10685130DA0</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>6E6A8F6A-DF71-4481-A276-CB21B50292C0</string>
+				<string>0716703E-7BD0-4B4B-BE1B-0868313308E8</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
-				<string>6EF35CEF-8DD3-4917-9EFA-723A72E21E89</string>
+				<string>FF3DEFDF-2A33-48B8-8023-83430C79CC19</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>631BA3C3-1EF6-4A44-A47F-6C9A76532B9F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FF3DEFDF-2A33-48B8-8023-83430C79CC19</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -864,85 +887,6 @@ printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$ti
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<true/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>#!/bin/bash
-
-json=$(./read_file.sh)
-timestamp=$(./calculate_timestamp.js "$timer_seconds")
-
-./add_intervals_timer.js "$timestamp" "$1" "$json" &gt; "${alfred_workflow_cache}/timers.json"
-
-printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$timestamp"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3205E894-388F-40FE-B704-166D9AF409B6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>1</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>{var:intervals_keyword}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>parse_intervals.js</string>
-				<key>subtext</key>
-				<string>5 m, 25m</string>
-				<key>title</key>
-				<string>Set interval timers...</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>343369E4-26DD-43F9-9614-F3C4E45051F2</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>availableviaurlhandler</key>
 				<true/>
 				<key>triggerid</key>
@@ -1024,19 +968,6 @@ printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$ti
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>unstackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.hidealfred</string>
-			<key>uid</key>
-			<string>56683A72-A095-4C38-B78F-9FF3E19F8C5A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1099,7 +1030,7 @@ printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$ti
 seconds=$(./input_to_seconds.js "$duration_input")
 timestamp=$(./calculate_timestamp.js "$seconds")
 
-printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$timestamp"</string>
+printf '{"alfredworkflow": {"arg": "", "variables": { "timer_id": "%s", "timer_seconds": "%s"} } }' "$timestamp" "$seconds"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1137,6 +1068,98 @@ printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$ti
 			<string>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>unstackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>56683A72-A095-4C38-B78F-9FF3E19F8C5A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+json=$(./read_file.sh)
+timestamp=$(./calculate_timestamp.js "$timer_seconds")
+
+./add_intervals_timer.js "$timestamp" "$1" "$json" &gt; "${alfred_workflow_cache}/timers.json"
+
+printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$timestamp"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3205E894-388F-40FE-B704-166D9AF409B6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>1</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:intervals_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>parse_intervals.js</string>
+				<key>subtext</key>
+				<string>5 m, 25m</string>
+				<key>title</key>
+				<string>Set interval timers...</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>343369E4-26DD-43F9-9614-F3C4E45051F2</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1709,7 +1732,7 @@ function run(argv) {
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>102</integer>
 				<key>script</key>
 				<string></string>
 				<key>scriptargtype</key>
@@ -1769,19 +1792,47 @@ function run(argv) {
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>5</integer>
+						<integer>6</integer>
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
-						<string>fire</string>
+						<string>noop</string>
 						<key>uid</key>
 						<string>6EF35CEF-8DD3-4917-9EFA-723A72E21E89</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>timer</string>
+						<key>outputlabel</key>
+						<string>timer</string>
+						<key>uid</key>
+						<string>B0BFC5B5-42E4-4636-B115-F10685130DA0</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>interval</string>
+						<key>outputlabel</key>
+						<string>interval</string>
+						<key>uid</key>
+						<string>FF3DEFDF-2A33-48B8-8023-83430C79CC19</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>noop</string>
+				<string>fire</string>
 				<key>hideelse</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1844,7 +1895,7 @@ function run(argv) {
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>delete_timer</string>
+				<string>start_timer</string>
 				<key>passinputasargument</key>
 				<false/>
 				<key>passvariables</key>
@@ -1855,27 +1906,7 @@ function run(argv) {
 			<key>type</key>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>2AA8618F-9BD5-40B7-85AB-7A15CF5AB2AD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>selected_timer_id</key>
-					<string>{var:timer_id}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>6E6A8F6A-DF71-4481-A276-CB21B50292C0</string>
+			<string>631BA3C3-1EF6-4A44-A47F-6C9A76532B9F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1939,15 +1970,6 @@ function run(argv) {
 			<key>ypos</key>
 			<real>145</real>
 		</dict>
-		<key>2AA8618F-9BD5-40B7-85AB-7A15CF5AB2AD</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
-			<key>xpos</key>
-			<real>570</real>
-			<key>ypos</key>
-			<real>1975</real>
-		</dict>
 		<key>2CD78571-C416-465E-A9F7-E785A96FD7EB</key>
 		<dict>
 			<key>colorindex</key>
@@ -1969,16 +1991,16 @@ function run(argv) {
 		<key>3205E894-388F-40FE-B704-166D9AF409B6</key>
 		<dict>
 			<key>xpos</key>
-			<real>445</real>
+			<real>415</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>690</real>
 		</dict>
 		<key>343369E4-26DD-43F9-9614-F3C4E45051F2</key>
 		<dict>
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>690</real>
 		</dict>
 		<key>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</key>
 		<dict>
@@ -2006,9 +2028,9 @@ function run(argv) {
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
 		<dict>
 			<key>xpos</key>
-			<real>415</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>700</real>
+			<real>555</real>
 		</dict>
 		<key>4E2D740F-EA10-4148-A0EB-5045C31344EA</key>
 		<dict>
@@ -2022,7 +2044,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>350</real>
 			<key>ypos</key>
-			<real>730</real>
+			<real>585</real>
 		</dict>
 		<key>516CDE24-C1D3-4566-A578-2FB9933522FA</key>
 		<dict>
@@ -2031,7 +2053,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>35</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>420</real>
 		</dict>
 		<key>5484F07A-48C5-4F69-923A-BC6303CF3F63</key>
 		<dict>
@@ -2063,6 +2085,15 @@ function run(argv) {
 			<key>ypos</key>
 			<real>905</real>
 		</dict>
+		<key>631BA3C3-1EF6-4A44-A47F-6C9A76532B9F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>495</real>
+			<key>ypos</key>
+			<real>1990</real>
+		</dict>
 		<key>665220C5-F58E-4FDE-972A-A0120FEE0A43</key>
 		<dict>
 			<key>colorindex</key>
@@ -2080,13 +2111,6 @@ function run(argv) {
 			<real>685</real>
 			<key>ypos</key>
 			<real>745</real>
-		</dict>
-		<key>6E6A8F6A-DF71-4481-A276-CB21B50292C0</key>
-		<dict>
-			<key>xpos</key>
-			<real>495</real>
-			<key>ypos</key>
-			<real>2005</real>
 		</dict>
 		<key>7277813B-769A-4E50-BEBC-7B9C52F3B78F</key>
 		<dict>
@@ -2113,7 +2137,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>35</real>
 			<key>ypos</key>
-			<real>700</real>
+			<real>555</real>
 		</dict>
 		<key>7B18CFA1-4FA1-42D9-A1FF-90C86232188A</key>
 		<dict>
@@ -2122,7 +2146,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>445</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>420</real>
 		</dict>
 		<key>7C20C02C-00E7-49DD-B0A6-B5719D205382</key>
 		<dict>
@@ -2138,7 +2162,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>700</real>
+			<real>555</real>
 		</dict>
 		<key>87FB3BE3-E9FA-4634-8D26-CF55E1590CE1</key>
 		<dict>
@@ -2232,7 +2256,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>420</real>
 		</dict>
 		<key>EA6761AC-A572-4207-B742-FD6A55A1E788</key>
 		<dict>
@@ -2246,7 +2270,7 @@ function run(argv) {
 			<key>xpos</key>
 			<real>350</real>
 			<key>ypos</key>
-			<real>1785</real>
+			<real>1770</real>
 		</dict>
 		<key>F596D83C-3346-449D-9BCA-3191EE4113AA</key>
 		<dict>

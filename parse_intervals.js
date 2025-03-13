@@ -96,6 +96,7 @@ function run(argv) {
   const createArgumentItem = () => {
     let title = '';
     let subtitle = '';
+    const intervalsData = [];
 
     if (!argv[0]) {
       title = 'Set interval timers...';
@@ -127,7 +128,7 @@ function run(argv) {
             inputToTimeMap(`${MAX_DELAY_IN_SECONDS}s`)
           );
           title = `Too long delay! Max is ${readableMaxDelay}`;
-          
+
           return {
             uid: 'intervals',
             title,
@@ -144,6 +145,12 @@ function run(argv) {
           firstTimerFireTime = calculateFireTime(seconds);
         }
 
+        intervalsData.push({
+          delaySeconds: seconds,
+          isPomodoro: 'false',
+          message: 'Timer is done!',
+        });
+
         readableTimes.push(timeMapToReadableTime(timeMap));
       }
 
@@ -155,13 +162,7 @@ function run(argv) {
       uid: 'intervals',
       title,
       subtitle,
-      arg: JSON.stringify({
-        intervals: intervals.map((interval) => ({
-          delay: interval,
-          isPomodoro: 'false',
-          message: 'Timer is done!',
-        })),
-      }),
+      arg: JSON.stringify(intervalsData),
       variables: {
         timer_seconds: firstTimerSeconds,
       },

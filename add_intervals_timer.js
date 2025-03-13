@@ -5,7 +5,7 @@ function run(argv) {
   const intervals = JSON.parse(argv[1]);
   const timers = JSON.parse(argv[2]);
 
-  timers[id] = intervals;
+  timers[id] = { intervals };
 
   return JSON.stringify(timers);
 }
