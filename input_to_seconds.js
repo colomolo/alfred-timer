@@ -1,16 +1,15 @@
 #!/usr/bin/env osascript -l JavaScript
 
 function run(argv) {
-  ObjC.import('stdlib');
-  const time = $.getenv('duration_input');
+  const input = argv[0];
 
   const ACCEPTED_UNITS_SECONDS = ['s', 'sec', 'secs', 'second', 'seconds'];
   const ACCEPTED_UNITS_MINUTES = ['', 'm', 'min', 'mins', 'minute', 'minutes'];
   const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
 
   const inputToTimeMap = (input) => {
-    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/ig)];
-  
+    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/gi)];
+
     return times.reduce((res, [_, digits, units]) => {
       const number = Number(digits);
       if (ACCEPTED_UNITS_SECONDS.includes(units)) {
@@ -22,7 +21,7 @@ function run(argv) {
       if (ACCEPTED_UNITS_HOURS.includes(units)) {
         res.hours = number > 0 && number;
       }
-      
+
       return res;
     }, {});
   };
@@ -47,5 +46,5 @@ function run(argv) {
     }, 0);
   };
 
-  return timeMapToSeconds(inputToTimeMap(time));
+  return String(timeMapToSeconds(inputToTimeMap(input)));
 }
