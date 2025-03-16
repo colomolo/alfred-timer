@@ -2,7 +2,13 @@
 
 function run(argv) {
   const input = argv[0];
-  const intervals = (input || '').split(',').map((interval) => interval.trim());
+  const intervals = (input || '').split(',').reduce((acc, interval) => {
+    const trimmed = interval.trim();
+    if (trimmed.length > 0) {
+      acc.push(trimmed);
+    }
+    return acc;
+  }, []);
   let firstTimerSeconds;
 
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
@@ -11,7 +17,7 @@ function run(argv) {
   const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
 
   const inputToTimeMap = (input) => {
-    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/gi)];
+    const times = [...(input || '').matchAll(/(\d*\.?\d+)\s*(\w*)/gi)];
 
     return times.reduce((res, [_, digits, units]) => {
       const number = Number(digits);
@@ -98,8 +104,20 @@ function run(argv) {
     let subtitle = '';
     const intervalsData = [];
 
+    const noop = () => {
+      return {
+        title,
+        subtitle,
+        arg: null,
+        variables: {
+          timer_seconds: null,
+        },
+      };
+    };
+
     if (!argv[0]) {
       title = 'Set interval timers...';
+      subtitle = 'Provide comma-separated durations: 25m, 5 m, …';
     } else {
       const readableTimes = [];
       let firstTimerFireTime;
@@ -110,15 +128,7 @@ function run(argv) {
         if (!isValidTimeMap(timeMap)) {
           title = "Can't understand that!";
 
-          return {
-            uid: 'intervals',
-            title,
-            subtitle,
-            arg: null,
-            variables: {
-              timer_seconds: null,
-            },
-          };
+          return noop();
         }
 
         const seconds = timeMapToSeconds(timeMap);
@@ -129,15 +139,7 @@ function run(argv) {
           );
           title = `Too long delay! Max is ${readableMaxDelay}`;
 
-          return {
-            uid: 'intervals',
-            title,
-            subtitle,
-            arg: null,
-            variables: {
-              timer_seconds: null,
-            },
-          };
+          return noop();
         }
 
         if (i === 0) {
@@ -145,16 +147,18 @@ function run(argv) {
           firstTimerFireTime = calculateFireTime(seconds);
         }
 
+        const readableTime = timeMapToReadableTime(timeMap);
+
         intervalsData.push({
           delaySeconds: seconds,
           isPomodoro: 'false',
-          message: 'Timer is done!',
+          message: `${readableTime} passed!`,
         });
 
-        readableTimes.push(timeMapToReadableTime(timeMap));
+        readableTimes.push(readableTime);
       }
 
-      title = `Run timers in intervals: ${readableTimes.join(', ')}`;
+      title = `Repeat timers in intervals: ${readableTimes.join(', ')}`;
       subtitle = `First timer will fire at ${firstTimerFireTime}`;
     }
 

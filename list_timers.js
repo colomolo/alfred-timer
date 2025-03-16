@@ -33,22 +33,30 @@ function run(argv) {
     }
     timeLeft += `${seconds}s`;
 
-    return `Will fire at ${new Intl.DateTimeFormat('en-US', options).format(ms)} (${timeLeft} left)`;
+    return `Will fire at ${new Intl.DateTimeFormat('en-US', options).format(
+      ms
+    )} (${timeLeft} left)`;
   };
 
   const items = Object.keys(timers)
     .sort((timerA, timerB) => Number(timerA) - Number(timerB))
     .map((id) => {
-      const message = timers[id].message;
-      const isPomodoro = timers[id].isPomodoro === 'true';
+      const isInterval = !!timers[id].intervals?.length > 0;
+      const timer = isInterval ? timers[id].intervals[0] : timers[id];
+      const message = timer.message;
+      const isPomodoro = timer.isPomodoro === 'true';
 
       return {
-        uid: id,
+        uid: String(id),
         title: formatFireTime(id),
         subtitle: message,
         arg: id,
         icon: {
-          path: isPomodoro ? './list_pomodoro.png' : './list_timer.png',
+          path: isInterval
+            ? './list_intervals_timer.png'
+            : isPomodoro
+            ? './list_pomodoro.png'
+            : './list_timer.png',
         },
         variables: {
           selected_timer_id: id,
@@ -68,6 +76,7 @@ function run(argv) {
   });
 
   return JSON.stringify({
+    skipknowledge: true,
     rerun: 1,
     items,
   });

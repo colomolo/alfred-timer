@@ -12,7 +12,7 @@ function run(argv) {
   const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
 
   const inputToTimeMap = (input) => {
-    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/gi)];
+    const times = [...(input || '').matchAll(/(\d*\.?\d+)\s*(\w*)/gi)];
 
     return times.reduce((res, [_, digits, units]) => {
       const number = Number(digits);
@@ -101,21 +101,34 @@ function run(argv) {
     let title = '';
     let subtitle = '';
 
+    const noop = () => {
+      return {
+        title,
+        subtitle,
+        arg: null,
+        variables: {
+          timer_seconds: null,
+        },
+      };
+    };
+
     if (!argv[0]) {
       title = 'Set timer...';
-      subtitle = `Hit ↵ to set to ${readableTime} or provide duration`;
+      subtitle = `Provide duration or hit ↵ to set to ${readableTime}`;
     } else if (isValidTimeMap(timeMap)) {
       if (seconds <= MAX_DELAY_IN_SECONDS) {
         title = `Set timer for ${readableTime}`;
         subtitle = `Will fire at ${calculateFireTime(seconds)}`;
       } else {
-        const readableMaxDelay = timeMapToReadableTime(
-          inputToTimeMap(`${MAX_DELAY_IN_SECONDS}s`)
-        );
+        const readableMaxDelay = timeMapToReadableTime(inputToTimeMap(`${MAX_DELAY_IN_SECONDS}s`));
         title = `Too long delay! Max is ${readableMaxDelay}`;
+
+        return noop();
       }
     } else {
       title = "Can't understand that!";
+
+      return noop();
     }
 
     return {

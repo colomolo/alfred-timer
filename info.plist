@@ -1146,9 +1146,9 @@ printf '{"alfredworkflow": {"arg": "", "variables": {"timer_id": "%s"} } }' "$ti
 				<key>scriptfile</key>
 				<string>parse_intervals.js</string>
 				<key>subtext</key>
-				<string>5 m, 25m</string>
+				<string>Enter comma-separated durations: 25m, 5 m, …</string>
 				<key>title</key>
-				<string>Set interval timers...</string>
+				<string>Set interval timers…</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
@@ -1934,9 +1934,9 @@ function run(argv) {
 		<key>0716703E-7BD0-4B4B-BE1B-0868313308E8</key>
 		<dict>
 			<key>xpos</key>
-			<real>495</real>
+			<real>690</real>
 			<key>ypos</key>
-			<real>1850</real>
+			<real>1870</real>
 		</dict>
 		<key>0F997DBC-8F60-48DA-B0EC-8D2F63DF7DC2</key>
 		<dict>
@@ -2028,7 +2028,7 @@ function run(argv) {
 		<key>3F55A876-18D0-4211-8548-526608B4D502</key>
 		<dict>
 			<key>xpos</key>
-			<real>460</real>
+			<real>445</real>
 			<key>ypos</key>
 			<real>555</real>
 		</dict>
@@ -2042,7 +2042,7 @@ function run(argv) {
 		<key>4EBB0702-3B74-4BBB-9E58-0CD315797E7A</key>
 		<dict>
 			<key>xpos</key>
-			<real>350</real>
+			<real>360</real>
 			<key>ypos</key>
 			<real>585</real>
 		</dict>
@@ -2090,9 +2090,9 @@ function run(argv) {
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>495</real>
+			<real>690</real>
 			<key>ypos</key>
-			<real>1990</real>
+			<real>1995</real>
 		</dict>
 		<key>665220C5-F58E-4FDE-972A-A0120FEE0A43</key>
 		<dict>
@@ -2523,7 +2523,7 @@ function run(argv) {
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.4.3</string>
+	<string>1.4.1</string>
 	<key>webaddress</key>
 	<string>http://colomolome.com</string>
 </dict>
