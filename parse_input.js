@@ -126,7 +126,7 @@ function run(argv) {
         return noop();
       }
     } else {
-      title = "Can't understand that!";
+      title = "Couldn’t understand that!";
 
       return noop();
     }

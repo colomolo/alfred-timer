@@ -116,7 +116,7 @@ function run(argv) {
         title = 'Too long delay!';
       }
     } else {
-      title = 'Can\'t understand that!';
+      title = 'Couldn’t understand that!';
     }
 
     return {

@@ -126,7 +126,7 @@ function run(argv) {
         const timeMap = inputToTimeMap(intervals[i]);
 
         if (!isValidTimeMap(timeMap)) {
-          title = "Can't understand that!";
+          title = "Couldn’t understand that!";
 
           return noop();
         }
