@@ -1,4 +1,4 @@
-![Timer workflow](./icon.png)
+![Timer workflow](./Workflow/icon.png)
 # Timer
 Simple [Alfred](https://www.alfredapp.com/) workflow for setting up short timers with a few keystrokes.
 
@@ -24,7 +24,7 @@ You also can set up two presets for your custom time durations.
 ### Duration input formats
 Hours – h, hr, hrs, hour, hours.  
 Minutes – m, min, mins, minute, minutes.  
-Seconds – s, sec, secs, second, seconds.
+Seconds – s, sec, secs, second, seconds.
 
 If no time unit is provided, it is counted as minutes.
 
