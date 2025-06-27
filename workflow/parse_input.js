@@ -2,14 +2,9 @@
 
 function run(argv) {
   ObjC.import('stdlib');
-  const selectedTimerId = $.getenv('selected_timer_id');
-  const message = $.getenv('timer_message');
-
-  let isPomodoro = "false";
-
-  try {
-    isPomodoro = JSON.parse($.getenv('timer_is_pomodoro'));
-  } catch {}
+  const defaultDuration = $.getenv('default_duration');
+  const presetDuration1 = $.getenv('preset_duration_1');
+  const presetDuration2 = $.getenv('preset_duration_2');
 
   const MAX_DELAY_IN_SECONDS = 60 * 60 * 2; // two hours
   const ACCEPTED_UNITS_SECONDS = ['s', 'sec', 'secs', 'second', 'seconds'];
@@ -17,7 +12,7 @@ function run(argv) {
   const ACCEPTED_UNITS_HOURS = ['h', 'hr', 'hrs', 'hour', 'hours'];
 
   const inputToTimeMap = (input) => {
-    const times = [...(input || '').trim().matchAll(/(\d*\.?\d+)\s*(\w*)/ig)];
+    const times = [...(input || '').matchAll(/(\d*\.?\d+)\s*(\w*)/gi)];
 
     return times.reduce((res, [_, digits, units]) => {
       const number = Number(digits);
@@ -99,24 +94,41 @@ function run(argv) {
     return new Intl.DateTimeFormat('en-US', options).format(showTime);
   };
 
-  const createEditTimeItem = () => {
-    const timeMap = inputToTimeMap(argv[0]);
+  const createArgumentItem = () => {
+    const timeMap = inputToTimeMap(argv[0] || defaultDuration);
     const seconds = timeMapToSeconds(timeMap);
     const readableTime = timeMapToReadableTime(timeMap);
     let title = '';
     let subtitle = '';
 
+    const noop = () => {
+      return {
+        title,
+        subtitle,
+        arg: null,
+        variables: {
+          timer_seconds: null,
+        },
+      };
+    };
+
     if (!argv[0]) {
-      title = `Set new time for '${message}'`;
+      title = 'Set timer...';
+      subtitle = `Provide duration or hit ↵ to set to ${readableTime}`;
     } else if (isValidTimeMap(timeMap)) {
       if (seconds <= MAX_DELAY_IN_SECONDS) {
-        title = `Set '${message}' time to ${readableTime}`;
+        title = `Set timer for ${readableTime}`;
         subtitle = `Will fire at ${calculateFireTime(seconds)}`;
       } else {
-        title = 'Too long delay!';
+        const readableMaxDelay = timeMapToReadableTime(inputToTimeMap(`${MAX_DELAY_IN_SECONDS}s`));
+        title = `Too long delay! Max is ${readableMaxDelay}`;
+
+        return noop();
       }
     } else {
-      title = 'Can\'t understand that!';
+      title = "Couldn’t understand that!";
+
+      return noop();
     }
 
     return {
@@ -125,18 +137,36 @@ function run(argv) {
       subtitle,
       arg: seconds,
       variables: {
-        'selected_timer_id': selectedTimerId,
-        'timer_seconds': seconds,
-        'timer_message': message,
-        'timer_is_pomodoro': isPomodoro,
+        timer_seconds: seconds,
       },
     };
   };
 
+  const createPresetItem = (input, uid) => {
+    const timeMap = inputToTimeMap(input || defaultDuration);
+    const seconds = timeMapToSeconds(timeMap);
+    const readableTime = timeMapToReadableTime(timeMap);
+
+    return {
+      uid,
+      title: `Set timer for ${readableTime}`,
+      subtitle: `Will fire at ${calculateFireTime(seconds)}`,
+      arg: seconds,
+      variables: {
+        timer_seconds: seconds,
+      },
+    };
+  };
+
+  const items = [createArgumentItem()];
+
+  if (!argv[0]) {
+    items.push(createPresetItem(presetDuration1, 'timer-preset-1'));
+    items.push(createPresetItem(presetDuration2, 'timer-preset-2'));
+  }
+
   return JSON.stringify({
     rerun: 1,
-    items: [
-      createEditTimeItem(),
-    ],
+    items,
   });
 }
