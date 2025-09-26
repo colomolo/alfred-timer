@@ -14,7 +14,7 @@ Use `timers` (or custom keyword) to see the list of active timers with option to
 You also can set up two presets for your custom time durations.
 
 ### Duration input examples
-- 10 mins 10
+- 10 mins
 - 1 hour 20 minutes
 - 35s
 - 50 seconds
