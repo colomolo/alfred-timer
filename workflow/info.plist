@@ -61,7 +61,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</string>
+				<string>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -88,19 +88,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>3205E894-388F-40FE-B704-166D9AF409B6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1483,21 +1470,25 @@ function run(argv) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>show_message</string>
-				<key>passinputasargument</key>
+				<key>concurrently</key>
 				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>schedule_timer.sh</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>E50C07BD-6CB3-43F5-AEC6-5CCEA6B7180A</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1511,19 +1502,6 @@ function run(argv) {
 			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
 			<string>2CD78571-C416-465E-A9F7-E785A96FD7EB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>{var:timer_seconds}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2001,13 +1979,6 @@ function run(argv) {
 			<real>190</real>
 			<key>ypos</key>
 			<real>690</real>
-		</dict>
-		<key>35AB17C4-AAA1-4043-89AA-E8E1C384E2ED</key>
-		<dict>
-			<key>xpos</key>
-			<real>185</real>
-			<key>ypos</key>
-			<real>1080</real>
 		</dict>
 		<key>381A734E-1012-432E-8243-ECAC94AAFDAD</key>
 		<dict>
